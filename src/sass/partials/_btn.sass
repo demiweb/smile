@@ -1,0 +1,40 @@
+.btn
+  $this: &
+  font-weight: 700
+  display: inline-block
+  text-align: center
+  color: $white
+  background-color: $accent-2
+  border: 1px solid  $accent-2
+  min-width: 272px
+  border-radius: 30px
+  padding: 1em
+  +tr(background-color .3s, border-color .3s, color .3s)
+  +hover
+    background-color: $accent-1
+    border-color: $accent-1
+
+  &--combine
+    height: 55px
+    padding-right: 45px
+    position: relative
+    background-color: $accent-1
+    border-color: $accent-1
+    +hover
+      background-color: $accent-2
+      border-color: $accent-2
+    #{$this}__icon
+      border-radius: 50%
+      width: 45px
+      height: 45px
+      background-color: $white
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%)
+      right: 5px
+      +flex(center, center)
+      +before
+        +icon-arrow(8, 8, 1, $accent-1, 225)
+        display: block
+        margin-right: 4px
+

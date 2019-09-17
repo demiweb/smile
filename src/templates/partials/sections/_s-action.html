@@ -1,0 +1,73 @@
+{%set
+actions = [
+  {
+    img: '01.jpg',
+    title: 'ЗАБИРАЙ -25% НА ОТБЕЛИВАНИЕ',
+    text: 'До 31 сентября 1450 грн. вместо 2185 грн. Успей!'
+  },
+  {
+    img: '02.jpg',
+    title: 'КОНСУЛЬТАЦИЯ ДЕТСКОГО 
+ОРТОДОНТА БЕСПЛАТНО!!!',
+    text: 'До 31 сентября Вы можете получить у нас в клинике
+консультацию ведущего ортодонта БЕСПЛАТНО
+(вместо 350 грн)!'
+  },
+  {
+    img: '03.jpg',
+    title: 'КОНСУЛЬТАЦИЯ ДЕТСКОГО 
+СТОМАТОЛОГА-ТЕРАПЕВТА 
+БЕСПЛАТНО!!!',
+    text: 'До 31 сентября Вы можете получить у нас в клинике 
+консультацию ведущего ортодонта БЕСПЛАТНО
+(вместо 350 грн)!'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section pb-0">
+  <div class="container">
+    <div class="section__title">
+      <div class="title title--accent">ХОРОШИЙ СТОМАТОЛОГ КИЕВ – ЭТО РЕАЛЬНО!</div>
+    </div>
+
+    <div class="section__subttl">В стоматологии «Смайлик» – пациентам предоставляются стоматологические услуги, соответствующие самым высоким международным стандартам качества. У н ас работают опытные врачи, используется импортное оборудование и современные зарубежные материалы. Добро пожаловать в киевскую стоматологию «Смайлик»!</div>
+
+    <!-- begin cards -->
+    <div class="cards">
+      <div class="row">
+        {% for i in actions %}
+        <div class="col-4">
+          <!-- begin card -->
+          <div class="card">
+            <div class="card__img js-lazy" data-background-image="./img/actions/{{ i.img }}">
+              {% if i.label %}
+              <div class="card__label label">-25%</div>
+              {% endif %}
+            </div>
+
+            <div class="card__content">
+              <div class="card__title">
+                <div class="title title--h3 title--bold">{{ i.title | safe }}</div>
+              </div>
+
+              <div class="card__text">{{ i.text | safe }}</div>
+
+              <div class="card__btn">
+                {{ mixins.btn(
+                  title = 'Успеть до конца акции',
+                  mod = ''
+                ) }}
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- end cards -->
+  </div>
+</section>
+<!-- end section -->

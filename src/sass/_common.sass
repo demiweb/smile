@@ -2,8 +2,9 @@ body
   background: $white
   line-height: 1.4
   font-size: $fz
+  font-weight: 300
   min-width: 320px
-  font-family: 'proximanova', Arial, sans-serif
+  font-family: 'helveticaneuecyr', Arial, sans-serif
   color: $c-text
   +no-scroll
 
@@ -16,3 +17,21 @@ body
   &.is-loaded:not(.no-animation)
     animation: fadeIn 1s
     
+
+.container
+  max-width: 1440px
+  margin-left: auto
+  margin-right: auto
+  padding-left: 15px
+  padding-right: 15px
+
+.meta-list
+  dl
+    +clr
+  dt
+    font-weight: 500
+    color: $black
+    float: left
+    margin-right: 5px
+  dd
+    margin-bottom: 10px

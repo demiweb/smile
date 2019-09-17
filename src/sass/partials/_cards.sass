@@ -1,0 +1,32 @@
+.card
+  $this: &
+  box-shadow: $shadow
+  border-radius: $radius
+  overflow: hidden
+  +flex(flex-start, normal, column)
+  height: 100%
+  &__img
+    +cover
+    background-color: $c-text
+    padding-top: 50%
+    +lg
+      margin-bottom: 15px
+  &__content
+    flex-grow: 1
+    background-color: $white
+    padding: 30px 30px 20px
+    +flex(flex-start, normal, column)
+  &__title
+    margin-bottom: 5px
+  &__text
+    flex-grow: 1
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+
+  &--center
+    text-align: center
+    #{$this}__img
+      padding-top: 60%
+    #{$this}__content
+      padding: 30px 10px 20px

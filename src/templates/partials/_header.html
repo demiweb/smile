@@ -1,5 +1,69 @@
+{%set
+header = {
+  contacts: [
+    { text: '<a href="tel:+380661644344">'+ mixins.icon('telephone') + '+38 (066) 164-43-44</a>' },
+    { text: '<a href="tel:+38067 1644344">'+ mixins.icon('telephone') + '+38 (067) 164-43-44</a>' },
+    { text: '<a href="tel:+380731644344">' + mixins.icon('telephone') + '+38 (073) 164-43-44</a>' },
+    { text: mixins.icon('clock') + 'Пн - Вс 10:00 - 20:00' },
+    { text: mixins.icon('maps-and-flags') + 'г. Киев, ул. Ю. Фучика, 4' }
+  ]
+}
+%}  
+
 <!-- begin header -->
 <header class="header">
-  hello from header
+    <div class="header__top">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__contacts">
+            {% for i in header.contacts %}
+              <div class="header__contact">
+                <!-- begin header-contact -->
+                <div class="header-contact">
+                  {{ i.text | safe }}
+                </div>
+                <!-- end header-contact -->
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="header__social">
+            {{ mixins.list(
+              name = 'social',
+              modifications = { wrap: '', item: '', link: '' },
+              list = [
+                { link: mixins.icon('instagram') },
+                { link: mixins.icon('facebook') }
+              ]
+            ) }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__bottom">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__logo">
+            <a href="/" class="logo">
+              <img class="js-lazy" alt="" data-src="./img/logo.png"/>
+            </a>
+          </div>
+
+          <div class="header__nav">
+            {% include "partials/_nav.html" %}
+          </div>
+
+          <div class="header__btn">
+            {{ mixins.btn(
+              title = 'Записаться на приём',
+              combine = true,
+              mod = 'btn--combine',
+              href = false
+            ) }}
+          </div>
+        </div>
+      </div>
+    </div>
 </header>
 <!-- end header -->

@@ -1,0 +1,17 @@
+{%set
+section = {
+  title: {
+    title: 'НАШИ ДОКТОРА'
+  },
+  subttl: {
+    text: '<p>Специалисты своего дела, опыт каждого из наших врачей более 15 лет. </p>
+  <p>Они знают, как найти подход к каждому</p>'
+  }
+}
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+  {% include "partials/_team.html" %}
+{% endblock %}

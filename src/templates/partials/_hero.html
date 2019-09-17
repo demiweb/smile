@@ -1,5 +1,42 @@
 <!-- begin hero -->
-<section class="hero">
-  <h1>hello from hero</h1>
+<section class="hero{% if hero.mod %} {{ hero.mod }}{% endif %}{% if hero.bg %} js-lazy{% endif %}" {% if hero.bg %}data-background-image="./img/hero/{{ hero.bg }}"{% endif %}>
+  <div class="container">
+    {% if hero.breadcrumbs %}
+      <div class="hero__breadcrumbs">
+        {{ mixins.list(
+          name = 'breadcrumbs',
+          modifications = { wrap: hero.breadcrumbs.mod, item: '', link: '' },
+          list = hero.breadcrumbs.list
+        ) }}
+      </div>
+    {% endif %}
+
+    <div class="hero__inner">
+      <div class="row">
+        <div class="{% if hero.colMod %}{{ hero.colMod }}{% else %}col-6{% endif %}">
+          {% if hero.title %}
+            <div class="hero__title">
+              <div class="title title--ttn title--white title--shadow title--sm title--bold">{{ hero.title | safe }}</div>
+            </div>
+          {% endif %}
+
+          {% if hero.btns %}
+          <div class="hero__btns">
+            {% for i in hero.btns %}
+            <div class="hero__btn">
+              {{ mixins.btn(
+                title = i.title,
+                mod = i.mod,
+                attributes = i.attributes,
+                href = i.href
+              ) }}
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>  
+    </div>
+  </div>
 </section>
 <!-- end hero -->

@@ -1,0 +1,20 @@
+---
+title: Index page
+hero: {
+  bg: 'bg-hero-home.jpg',
+  title: 'Центр детской и взрослой стоматологической эстетики в Киеве',
+  btns: [
+    {
+      title: 'Записаться на приём'
+    }
+  ]
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-action.html" %}
+  {% include "partials/sections/_s-team.html" %}
+  {% include "partials/sections/_s-services.html" %}
+{% endblock %}

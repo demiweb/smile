@@ -1,0 +1,28 @@
+{{ mixins.list(
+  name = 'nav',
+  modifications = { wrap: '', item: '', link: '' },
+  list = [
+    { link: 'Главная', modLink: 'is-active' },
+    { link: 'Взрослым', modItem: 'has-dropdown', item: mixins.list(
+      name = 'nav',
+      modifications = { wrap: 'nav--dropdown', item: '', link: '' },
+      list = [
+        { item: '', link: 'item 1', modItem: '', modLink: 'is-active' },
+        { item: '', link: 'item 2', modItem: '', modLink: '' },
+        { item: '', link: 'item 3', modItem: '', modLink: '' }
+      ]
+    ) },
+    { link: 'Детям', modItem: 'has-dropdown', item: mixins.list(
+      name = 'nav',
+      modifications = { wrap: 'nav--dropdown', item: '', link: '' },
+      list = [
+        { item: '', link: 'item 1', modItem: '', modLink: 'is-active' },
+        { item: '', link: 'item 2', modItem: '', modLink: '' },
+        { item: '', link: 'item 3', modItem: '', modLink: '' }
+      ]
+    ) },
+    { link: 'О нас' },
+    { link: 'Прайс' },
+    { link: 'Контакты' }
+  ]
+) }}

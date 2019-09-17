@@ -1,0 +1,200 @@
+{%set
+members = [
+  {
+    active: true,
+    title: 'Мэри Варданян',
+    subttl: 'стоматолог-ортодонт, 
+    детский ортодонт',
+    meta: [
+      {
+        dt: 'Образование:',
+        dd: 'Национальный медицинский университет имени А.А. Богомольца, стоматологический факультет.'
+      },
+      {
+        dt: 'Стаж работы:',
+        dd: '7 лет'
+      },
+      {
+        dt: 'Количество пациентов:',
+        dd: '2500 человек'
+      }
+    ]
+  },
+  {
+    title: 'Максим Дорошенко',
+    subttl: 'Стоматолог- терапевт, эндодонт',
+    meta: [
+      {
+        dt: 'Образование:',
+        dd: 'Национальный медицинский университет имени А.А. Богомольца, стоматологический факультет.'
+      },
+      {
+        dt: 'Стаж работы:',
+        dd: '7 лет'
+      },
+      {
+        dt: 'Количество пациентов:',
+        dd: '2500 человек'
+      }
+    ]
+  },
+  {
+    title: 'Яна Овчаренко',
+    subttl: 'гигиенист, ассистент 
+    стоматолога',
+    meta: [
+      {
+        dt: 'Образование:',
+        dd: 'Национальный медицинский университет имени А.А. Богомольца, стоматологический факультет.'
+      },
+      {
+        dt: 'Стаж работы:',
+        dd: '7 лет'
+      },
+      {
+        dt: 'Количество пациентов:',
+        dd: '2500 человек'
+      }
+    ]
+  },
+   {
+    title: 'Мэри Варданян',
+    subttl: 'стоматолог-ортодонт, 
+    детский ортодонт',
+    meta: [
+      {
+        dt: 'Образование:',
+        dd: 'Национальный медицинский университет имени А.А. Богомольца, стоматологический факультет.'
+      },
+      {
+        dt: 'Стаж работы:',
+        dd: '7 лет'
+      },
+      {
+        dt: 'Количество пациентов:',
+        dd: '2500 человек'
+      }
+    ]
+  },
+  {
+    title: 'Максим Дорошенко',
+    subttl: 'Стоматолог- терапевт, эндодонт',
+    meta: [
+      {
+        dt: 'Образование:',
+        dd: 'Национальный медицинский университет имени А.А. Богомольца, стоматологический факультет.'
+      },
+      {
+        dt: 'Стаж работы:',
+        dd: '7 лет'
+      },
+      {
+        dt: 'Количество пациентов:',
+        dd: '2500 человек'
+      }
+    ]
+  },
+  {
+    title: 'Яна Овчаренко',
+    subttl: 'гигиенист, ассистент 
+    стоматолога',
+    meta: [
+      {
+        dt: 'Образование:',
+        dd: 'Национальный медицинский университет имени А.А. Богомольца, стоматологический факультет.'
+      },
+      {
+        dt: 'Стаж работы:',
+        dd: '7 лет'
+      },
+      {
+        dt: 'Количество пациентов:',
+        dd: '2500 человек'
+      }
+    ]
+  }
+]
+%}
+
+<!-- begin team -->
+<div class="team js-team">
+  <div class="row">
+    <div class="col-4">
+      <div class="team__btns">
+        <!-- begin slider -->
+        <div class="slider__wrap slider--team__wrap">
+          <button class="slider__prev prev js-slider-prev"></button>
+
+          <div class="slider slider--team js-slider" data-slider="team">
+            {% for i in members %}
+            <!-- begin slide -->
+            <div class="slide">
+              <!-- begin member -->
+              <button class="member js-team-btn {% if i.active %} is-active{% endif %}" data-member="{{ i.dataMember}}">
+                <span class="member__img js-lazy" data-background-image="./img/team/01.jpg"></span>
+
+                <span class="member__content">
+                  <span class="member__title">
+                    <span class="title title--bold title--h3 title--ttn">{{ i.title | safe }}</span>
+                  </span>
+
+                  <span class="member__subttl">{{ i.subttl | safe }}</span>
+                </span>
+              </button>
+              <!-- end member -->
+            </div>
+            <!-- end slide -->
+            {% endfor %}
+          </div>
+
+          <button class="slider__next next js-slider-next"></button>
+        </div>
+        <!-- end slider -->
+      </div>
+    </div>
+
+    <div class="col-8">
+      <div class="team__descr">
+        {% for i in members %}
+        <!-- begin member-full -->
+        <div class="member-full js-team-descr{% if i.active %} is-active{% endif %}" data-member="{{ i.dataMember }}">
+          <div class="member-full__left">
+            <div class="member-full__img js-lazy" data-background-image="./img/team/lg-01.jpg"></div>
+          </div>
+
+          <div class="member-full__right">
+            <div class="member-full__content">
+              <div class="member-full__title">
+                <div class="title title--bold title--ttn">{{ i.title | safe }}</div>
+              </div>
+
+              <div class="member-full__subttl">
+                <div class="title title--bold title--h5 title--black">{{ i.subttl | safe }}</div>
+              </div>
+
+              <div class="member-full__meta">
+                {{ mixins.list(
+                  name = 'meta-list',
+                  descr = true,
+                  modifications = { wrap: '', item: '', link: '' },
+                  list = i.meta
+                ) }}
+              </div>
+
+              <div class="member-full__btn">
+                {{ mixins.btn(
+                  title = 'Записаться на приём',
+                  mod = '',
+                  href = false
+                ) }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end member-full -->
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end team -->

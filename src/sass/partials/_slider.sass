@@ -1,0 +1,26 @@
+.slider
+
+  &--team
+    &__wrap
+      +flex(space-between, normal, column)
+      
+      .slider
+        &__prev, &__next
+          margin-left: auto
+          margin-right: auto
+
+.prev, .next
+  display: inline-block
+  position: relative
+  border-radius: 50%
+  background-color: $white
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08)
+  width: 40px
+  height: 40px
+  +before
+    +icon-arrow(10, 10, 1, currentColor, 135)
+    +vcenter
+    transform: translate(-50%, -30%) rotate(135deg)
+
+.next
+  transform: scaleY(-1)

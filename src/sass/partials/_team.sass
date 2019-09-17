@@ -1,0 +1,91 @@
+.team
+  &__btns
+    height: 100%
+    // +flex(space-between, normal, column)
+    .slider__wrap
+      height: 100%
+      // flex-grow: 1
+  &__descr
+    height: 100%
+    position: relative
+    .member-full
+      position: absolute
+      visibility: 100%
+      bottom: 50px
+      top: 25px
+      left: 0
+      right: 0
+      z-index: 1
+      visibility: hidden
+      opacity: 0
+      &.is-active
+        visibility: visible
+        opacity: 1
+
+.member
+  +flex(flex-start, center)
+  padding: 30px 25px
+  +tr(box-shadow .3s, background-color .3s)
+  &.is-active
+    border-radius: $radius-sm
+    box-shadow: 0px 0px 18px 0px rgba(19, 30, 133, 0.09)
+    background-color: $white
+  +hover
+    @extend .member.is-active
+
+  &__img
+    width: 120px
+    height: 120px
+    flex: 0 0 120px
+    border: 5px solid $accent-2
+    border-radius: 50%
+    +cover
+  &__content
+    display: block
+    text-align: left
+    padding-left: 20px
+    padding-right: 20px
+    +lg
+      padding-left: 10px
+      padding-right: 10px
+  &__title
+    display: block
+    margin-bottom: 10px
+    +md
+      margin-bottom: 5px
+  &__subttl
+    display: block
+
+
+
+.member-full
+  border-radius: $radius
+  box-shadow: 0px 0px 18px 0px rgba(19, 30, 133, 0.09)
+  padding: 60px
+  +flex
+  &__left
+    width: percentage(360/810)
+  &__right
+    width: percentage(450/810)
+  &__img
+    +cover
+    // padding-top: 140%
+    height: 100%
+  &__right
+    +flex(center, normal, column)
+    padding-left: 65px
+  &__title
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__subttl
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__meta
+    margin-bottom: 50px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  

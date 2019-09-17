@@ -1,0 +1,19 @@
+<!-- begin section -->
+<section class="section{% if section.mod %} {{ section.mod }}{% endif %}">
+  <div class="container">
+    {% if section.title %}
+    <div class="section__title{% if section.title.wrapMod %} {{ section.title.wrapMod }}{% endif %}">
+      <div class="title title--accent{% if section.title.mod %} {{ section.title.mod }}{% endif %}">{{ section.title.title | safe }}</div>
+    </div>
+    {% endif %}
+
+    {% if section.subttl %}
+    <div class="section__title{% if section.subttl.mod %} {{ section.subttl.mod }}{% endif %}">
+      {{ section.subttl.text | safe }}
+    </div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+  </div>
+</section>
+<!-- end section -->
