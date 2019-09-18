@@ -119,11 +119,11 @@ members = [
 <!-- begin team -->
 <div class="team js-team">
   <div class="row">
-    <div class="col-4">
+    <div class="col-lg-4">
       <div class="team__btns">
         <!-- begin slider -->
         <div class="slider__wrap slider--team__wrap">
-          <button class="slider__prev prev js-slider-prev"></button>
+          <button class="slider__prev prev prev--vert js-slider-prev"></button>
 
           <div class="slider slider--team js-slider" data-slider="team">
             {% for i in members %}
@@ -131,7 +131,7 @@ members = [
             <div class="slide">
               <!-- begin member -->
               <button class="member js-team-btn {% if i.active %} is-active{% endif %}" data-member="{{ i.dataMember}}">
-                <span class="member__img js-lazy" data-background-image="./img/team/01.jpg"></span>
+                <span class="member__img user-img  user-img--accent-2 js-lazy" data-background-image="./img/team/01.jpg"></span>
 
                 <span class="member__content">
                   <span class="member__title">
@@ -147,13 +147,13 @@ members = [
             {% endfor %}
           </div>
 
-          <button class="slider__next next js-slider-next"></button>
+          <button class="slider__next next next--vert js-slider-next"></button>
         </div>
         <!-- end slider -->
       </div>
     </div>
 
-    <div class="col-8">
+    <div class="col-lg-8">
       <div class="team__descr">
         {% for i in members %}
         <!-- begin member-full -->

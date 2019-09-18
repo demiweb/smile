@@ -8,13 +8,21 @@
   &__descr
     height: 100%
     position: relative
+    overflow: hidden
+    border-radius: $radius
+    box-shadow: 0px 0px 18px 0px rgba(19, 30, 133, 0.09)
+    // padding: 20px
+    +flex
+    +lg
+      height: auto
+      // padding-top: 70%
     .member-full
-      position: absolute
-      visibility: 100%
-      bottom: 50px
-      top: 25px
-      left: 0
-      right: 0
+      position: relative
+      flex: 0 0 100%
+      // bottom: 50px
+      // top: 25px
+      // left: 0
+      // right: 0
       z-index: 1
       visibility: hidden
       opacity: 0
@@ -24,8 +32,13 @@
 
 .member
   +flex(flex-start, center)
+  width: 100%
   padding: 30px 25px
   +tr(box-shadow .3s, background-color .3s)
+  +xl
+    padding: 25px
+  +lg
+    padding: 15px
   &.is-active
     border-radius: $radius-sm
     box-shadow: 0px 0px 18px 0px rgba(19, 30, 133, 0.09)
@@ -34,12 +47,7 @@
     @extend .member.is-active
 
   &__img
-    width: 120px
-    height: 120px
-    flex: 0 0 120px
-    border: 5px solid $accent-2
-    border-radius: 50%
-    +cover
+    
   &__content
     display: block
     text-align: left
@@ -59,21 +67,48 @@
 
 
 .member-full
-  border-radius: $radius
-  box-shadow: 0px 0px 18px 0px rgba(19, 30, 133, 0.09)
+  
   padding: 60px
   +flex
+  +xl
+    padding: 50px
+  +lg
+    padding: 40px
+  +md
+    padding: 30px
+  +sm
+    padding: 20px
+    display: block
   &__left
     width: percentage(360/810)
+    +sm
+      width: auto
   &__right
     width: percentage(450/810)
+    +sm
+      width: auto
   &__img
     +cover
     // padding-top: 140%
     height: 100%
+    +lg
+      padding-top: 120%
+    +sm
+      padding-top: 50%
+      max-width: 50%
+      margin-bottom: 15px
+    +xs
+      max-width: none
+      padding-top: 100%
   &__right
     +flex(center, normal, column)
     padding-left: 65px
+    +xl
+      padding-left: 40px
+    +lg
+      padding-left: 20px
+    +sm
+      padding-left: 0
   &__title
     margin-bottom: 15px
     +md

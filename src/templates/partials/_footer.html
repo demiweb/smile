@@ -1,5 +1,117 @@
 <!-- begin footer -->
 <footer class="footer">
-  hello from footer
+  <div class="container">
+    <div class="footer__inner">
+      <div class="row">
+        <div class="col-3">
+          <div class="footer__logo">
+            <a href="#" class="logo">
+              <img class="js-lazy" alt="" data-src="./img/logo-white.png"/>
+            </a>
+          </div>
+
+          <div class="footer__text">
+            <p>Центр детской и взрослой <br>
+            стоматологической эстетики.</p>
+            <p>2019 &copy; Все права защищены</p>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="footer__block">
+            <div class="footer__title">
+              <div class="title title--h6 title--white">Полезные ссылки</div>
+            </div>
+
+            <div class="footer__nav">
+              {{ mixins.list(
+                name = 'nav',
+                modifications = { wrap: 'nav--footer', item: '', link: '' },
+                list = [
+                  { link: 'Главная' },
+                  { link: 'О нас' },
+                  { link: 'Преимущества' }
+                ]
+              ) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="footer__block">
+            <div class="footer__title">
+              <div class="title title--h6 title--white">Клиентам</div>
+            </div>
+
+            <div class="footer__nav">
+              {{ mixins.list(
+                name = 'nav',
+                modifications = { wrap: 'nav--footer', item: '', link: '' },
+                list = [
+                  { link: 'Услуги' },
+                  { link: 'Записаться на прием' },
+                  { link: 'Цены' }
+                ]
+              ) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="footer__block">
+            <div class="footer__title">
+              <div class="title title--h6 title--white">Связаться с нами</div>
+            </div>
+
+            <div class="footer__nav">
+              {{ mixins.list(
+                name = '',
+                modifications = { wrap: 'nav nav--footer', item: '', link: '' },
+                list = [
+                  { link: '+38 (066) 164-43-44', href: 'tel:+380661644344' },
+                  { link: '+38 (067) 164-43-44', href: 'tel:+380671644344' },
+                  { link: '+38 (073) 164-43-44', href: 'tel:+380731644344' }
+                ]
+              ) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="footer__block">
+            <div class="footer__title">
+              <div class="title title--h6 title--white">Полезные ссылки</div>
+            </div>
+
+            <div class="footer__nav">
+              {{ mixins.list(
+                name = 'nav',
+                modifications = { wrap: 'nav--footer', item: '', link: '' },
+                list = [
+                  { item: 'С 10:00 до 20:00 (Пн - Вс)' }
+                ]
+              ) }}
+            </div>
+
+            <div class="footer__social">
+              {{ mixins.list(
+                name = 'social',
+                modifications = { wrap: '', item: '', link: '' },
+                list = [
+                  { link: mixins.icon('instagram') },
+                  { link: mixins.icon('facebook') }
+                ]
+              ) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__auth">
+      <div class="footer__auth-icon">{{ mixins.icon('D') }}</div>
+      <div class="footer__auth-title">Сайт разработан веб-студией <br><a href="#">«Demiweb International»</a></div>
+    </div>
+  </div>
 </footer>
 <!-- end footer -->

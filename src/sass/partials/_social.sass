@@ -2,7 +2,20 @@
   li
     display: inline-block
     vertical-align: middle
-    +notlast
-      margin-right: 15px
+    // +notlast
+    //   margin-right: 15px
+    +notfirst
+        margin-left: 15px
   .icon
     font-size: 1.25em
+  a
+    +tr(color .3s)
+    +hover
+      color: $c-text
+
+  // &--right
+  //   li
+  //     +notlast
+  //       margin-right: 0
+  //     +notfirst
+  //       margin-left: 15px

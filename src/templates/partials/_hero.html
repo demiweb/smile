@@ -13,7 +13,7 @@
 
     <div class="hero__inner">
       <div class="row">
-        <div class="{% if hero.colMod %}{{ hero.colMod }}{% else %}col-6{% endif %}">
+        <div class="{% if hero.colMod %}{{ hero.colMod }}{% else %}col-md-6{% endif %}">
           {% if hero.title %}
             <div class="hero__title">
               <div class="title title--ttn title--white title--shadow title--sm title--bold">{{ hero.title | safe }}</div>

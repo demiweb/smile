@@ -36,33 +36,16 @@ actions = [
 
     <!-- begin cards -->
     <div class="cards">
-      <div class="row">
+      <div class="row justify-content-center">
         {% for i in actions %}
-        <div class="col-4">
-          <!-- begin card -->
-          <div class="card">
-            <div class="card__img js-lazy" data-background-image="./img/actions/{{ i.img }}">
-              {% if i.label %}
-              <div class="card__label label">-25%</div>
-              {% endif %}
-            </div>
-
-            <div class="card__content">
-              <div class="card__title">
-                <div class="title title--h3 title--bold">{{ i.title | safe }}</div>
-              </div>
-
-              <div class="card__text">{{ i.text | safe }}</div>
-
-              <div class="card__btn">
-                {{ mixins.btn(
-                  title = 'Успеть до конца акции',
-                  mod = ''
-                ) }}
-              </div>
-            </div>
-          </div>
-          <!-- end card -->
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          {{ mixins.card(
+            mod = '',
+            img = i.img,
+            title = i.title,
+            text = i.text,
+            button = { title: 'Успеть до конца акции', mod: 'btn--full' }
+          ) }}
         </div>
         {% endfor %}
       </div>

@@ -30,7 +30,7 @@ header = {
           <div class="header__social">
             {{ mixins.list(
               name = 'social',
-              modifications = { wrap: '', item: '', link: '' },
+              modifications = { wrap: 'social--right', item: '', link: '' },
               list = [
                 { link: mixins.icon('instagram') },
                 { link: mixins.icon('facebook') }
@@ -50,8 +50,45 @@ header = {
             </a>
           </div>
 
-          <div class="header__nav">
-            {% include "partials/_nav.html" %}
+          <div class="header__nav js-menu">
+            <div class="header__nav-in">
+              <button class="header__close js-menu-close"></button>
+
+              {% include "partials/_nav.html" %}
+
+              <div class="header__contacts-mob">
+                {% for i in header.contacts %}
+                  <div class="header__contact">
+                    <!-- begin header-contact -->
+                    <div class="header-contact">
+                      {{ i.text | safe }}
+                    </div>
+                    <!-- end header-contact -->
+                  </div>
+                {% endfor %}
+              </div>
+
+              <div class="header__social-mob">
+                {{ mixins.list(
+                  name = 'social',
+                  modifications = { wrap: '', item: '', link: '' },
+                  list = [
+                    { link: mixins.icon('instagram') },
+                    { link: mixins.icon('facebook') }
+                  ]
+                ) }}
+              </div>
+
+              <div class="header__btn-mob">
+                {{ mixins.btn(
+                  title = 'Записаться на приём',
+                  combine = true,
+                  mod = 'btn--combine',
+                  href = false
+                ) }}
+                
+              </div>
+            </div>
           </div>
 
           <div class="header__btn">
@@ -61,7 +98,14 @@ header = {
               mod = 'btn--combine',
               href = false
             ) }}
+            
           </div>
+
+          <div class="header__burger">
+            <button class="burger js-burger"><span></span></button>
+          </div>
+
+          
         </div>
       </div>
     </div>

@@ -11,13 +11,16 @@ h1, h2, h3, h4, h5, h6
   text-transform: uppercase
   font-weight: 500
   display: block
-
+  &--h2
+    +css-lock(18, 24, 320, 1399, font-size)
   &--h3
-    +css-lock(18, 21, 320, 1399, font-size)
+    +css-lock(16, 21, 320, 1399, font-size)
   &--h5
     +css-lock(14, 16, 767, 1399, font-size)
     +sm
       font-size: 14px !important
+  &--h6
+    font-size: $fz-sm !important
   &--white
   &--sm
     +css-lock(21, 34, 320, 1399, font-size)

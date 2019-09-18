@@ -1,0 +1,36 @@
+.footer
+  color: $white
+  background-color: $accent-1
+  &__inner
+    padding-top: 115px
+    padding-bottom: 60px
+  &__title
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__text
+    font-size: 13px
+  &__nav
+    +notlast
+      margin-bottom: 20px
+      +md
+        margin-bottom: 10px
+  &__auth
+    font-size: 13px
+  &__auth-icon
+    background-color: $black
+    +inline-flex(center, center)
+    margin-right: 10px
+    width: 38px
+    height: 38px
+    vertical-align: top
+    .icon
+      font-size: 21px
+  &__auth-title
+    display: inline-block
+    vertical-align: top
+    a
+      +tr(color .3s)
+      text-decoration: underline
+      +hover
+        color: $c-text

@@ -1,0 +1,30 @@
+{% from 'mixins/_btn.html' import btn %}
+{% set btn = btn %}
+
+{% macro card(mod, img, label, title, text, button) %}
+<!-- begin card -->
+<div class="card{% if mod %} {{ mod }}{% endif %}">
+  <div class="card__img js-lazy" data-background-image="./img/actions/{{ img }}">
+    {% if label %}
+    <div class="card__label label">-25%</div>
+    {% endif %}
+  </div>
+
+  <div class="card__content">
+    <div class="card__title">
+      <div class="title title--h3 title--bold">{{ title | safe }}</div>
+    </div>
+
+    <div class="card__text">{{ text | safe }}</div>
+
+    <div class="card__btn">
+      {{ btn(
+        title = button.title,
+        mod = button.mod,
+        attributes = button.attributes
+      ) }}
+    </div>
+  </div>
+</div>
+<!-- end card -->
+{% endmacro %}

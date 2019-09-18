@@ -8,10 +8,16 @@ import sayHello from './lib/sayHello';
 import setHTMLClassNames from './components/setHTMLClassNames';
 import setLazy from './components/setLazy';
 import setSliders from './components/setSliders';
+import setScrollBar from './components/setScrollBar';
+import toggleMenu from './components/toggleMenu';
+import toggleTeam from './components/toggleTeam';
 
 document.addEventListener('DOMContentLoaded', () => {
   sayHello();
   setHTMLClassNames();
   setLazy();
   setSliders();
+  setScrollBar();
+  toggleMenu();
+  toggleTeam();
 });

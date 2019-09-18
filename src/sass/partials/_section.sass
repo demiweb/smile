@@ -1,10 +1,20 @@
 .section
-  padding-top: 60px
-  padding-bottom: 60px
+  +css-lock(30, 60, 320, 1499, padding-top)
+  +css-lock(30, 60, 320, 1499, padding-bottom)
   &__title
     text-align: center
     margin-bottom: 20px
     +md
+      margin-bottom: 10px
+  &__title-mb-lg
+    margin-bottom: 60px
+    +xl
+      margin-bottom: 50px
+    +lg
+      margin-bottom: 40px
+    +md
+      margin-bottom: 20px
+    +sm
       margin-bottom: 10px
   &__subttl
     text-align: center
@@ -20,3 +30,7 @@
       margin-bottom: 20px
     +sm
       margin-bottom: 10px
+
+  &--accent-2
+    background-color: $accent-2
+    box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.37)

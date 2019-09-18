@@ -1,13 +1,59 @@
 .slider
+  &__controls
+    padding-top: 20px
+    text-align: center
+    .prev, .next
+      margin-left: 10px
+      margin-right: 10px
+  &__wrap
+    position: relative
+    .tns-nav
+      text-align: center
+      button
+        display: inline-block
+        margin-right: 5px
+        margin-left: 5px
+        width: 8px
+        height: 8px
+        border-radius: 50%
+        background-color: $gray-light
+        &.tns-nav-active
+          background-color: $accent-2
 
-  &--team
+  &--team      
     &__wrap
       +flex(space-between, normal, column)
-      
+      +md
+        display: block
+        .tns-ovh
+          padding-top: 10px 
+          padding-bottom: 10px
+        .tns-outer
+          display: inline-block
+          vertical-align: middle
+          width: calc(100% - 90px)
+      +sm        
+        .tns-outer
+          width: 100%
       .slider
         &__prev, &__next
           margin-left: auto
           margin-right: auto
+          +md
+            margin-left: 0
+            margin-right: 0
+            display: inline-block
+            vertical-align: middle
+          +sm
+            display: none
+  &--items
+    +flex
+    &__wrap
+      .tns-ovh
+        padding-top: 10px
+        padding-bottom: 10px
+    .slide
+
 
 .prev, .next
   display: inline-block
@@ -17,10 +63,27 @@
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08)
   width: 40px
   height: 40px
+  +tr(background-color .3s, color .3s)
   +before
-    +icon-arrow(10, 10, 1, currentColor, 135)
+    +icon-arrow(10, 10, 1, currentColor, 45)
     +vcenter
-    transform: translate(-50%, -30%) rotate(135deg)
+    transform: translate(-30%, -50%) rotate(45deg)
+  +hover
+    background-color: $accent-2
+    color: $white
+  &--vert
+    +before
+      +icon-arrow(10, 10, 1, currentColor, 135)
+      +vcenter
+      transform: translate(-50%, -30%) rotate(135deg)
+    +md
+      +before
+        +icon-arrow(10, 10, 1, currentColor, 45)
+        transform: translate(-30%, -50%) rotate(45deg)
 
 .next
-  transform: scaleY(-1)
+  transform: scaleX(-1)
+  &--vert
+    transform: scaleY(-1)
+    +md
+      transform: scaleX(-1)

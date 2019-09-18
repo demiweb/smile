@@ -4,7 +4,11 @@
   border-radius: $radius
   overflow: hidden
   +flex(flex-start, normal, column)
-  height: 100%
+  height: calc(100% - 30px)
+  margin-bottom: 30px
+  +xs
+    margin-bottom: 15px
+    height: calc(100% - 15px)
   &__img
     +cover
     background-color: $c-text
@@ -16,6 +20,10 @@
     background-color: $white
     padding: 30px 30px 20px
     +flex(flex-start, normal, column)
+    +xl
+      padding: 20px
+    +lg
+      padding: 15px
   &__title
     margin-bottom: 5px
   &__text
@@ -23,6 +31,8 @@
     margin-bottom: 30px
     +md
       margin-bottom: 15px
+  &__btn
+    max-width: $btn-width
 
   &--center
     text-align: center
@@ -30,3 +40,5 @@
       padding-top: 60%
     #{$this}__content
       padding: 30px 10px 20px
+    #{$this}__btn
+      max-width: none

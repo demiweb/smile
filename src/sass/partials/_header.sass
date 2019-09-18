@@ -1,36 +1,141 @@
 .header
   $this: &
+  position: relative
+  z-index: 10
+  +lg
+    position: fixed    
+    left: 0
+    top: 0
+    right: 0
   &__top
     background-color: $accent-2
     color: $white
+    height: $header-top-height
+    +lg
+      display: none
   &__bottom
     background-color: $white
+    height: $header-bottom-height
+    +lg
+      height: $header-bottom-height-lg
+    +xs
+      height: $header-bottom-height-xs
   &__inner
     @extend .row
     padding-top: 15px
     padding-bottom: 15px
+    +lg
+      padding-top: 10px
+      padding-bottom: 10px
+    +xs
+      padding-top: 5px
+      padding-bottom: 5px
   &__contacts
-    @extend .col-10
+    @extend .col-11
     +flex(flex-start, center)
-    margin-left: -15px
-    margin-right: -15px
+    // margin-left: -15px
+    // margin-right: -15px
   &__contact
     padding-left: 15px
     padding-right: 15px
     width: 20%
+    +lg
+      width: auto
+      padding-top: 10px
+      padding-bottom: 10px
   &__social
-    @extend .col-2
-    text-align: right
-  &__logo
-    @extend .col-3
-  &__nav
-    @extend .col-6
-    +flex(flex-start, center)
-    .nav
-      width: 100%
-  &__btn
-    @extend .col-3
+    @extend .col-1
+    // text-align: right
     +flex(flex-end, center)
+  &__logo
+    @extend .col-xl-3
+    // @extend .col-sm-3
+    // @extend .col-9
+    +flex(flex-start ,center)
+    +lg
+      width: auto
+      flex-grow: 1
+  &__nav
+    @extend .col-xl-6
+    +flex(flex-start, center)
+    .nav:not(.nav--dropdown)
+      width: 100%
+    +lg
+      position: fixed
+      display: block
+      z-index: 10
+      left: 0
+      right: 0
+      bottom: 0
+      top: 0
+      background-color: rgba($black, .7)
+      // transform: translate(-100%, 0)
+      visibility: hidden
+      opacity: 0
+      padding: 0
+      +ready
+        +tr(transform .3s, opacity .3s, visibility .3s)
+      &.is-active
+        opacity: 1
+        visibility: visible
+        #{$this}__nav-in
+          transform: translate(0, 0)
+  &__nav-in
+    width: 100%
+    +flex(flex-start, center)
+    position: relative
+    +ready
+      +tr(transform .3s)
+    +lg
+      display: block
+      background-color: $white
+      height: 100%
+      // padding: 15px
+      padding-top: 40px
+      padding-bottom: 15px
+      overflow: auto
+      width: 300px
+      transform: translate(-100%, 0)
+  &__btn
+    @extend .col-xl-3
+    // @extend .col-sm-8
+    // @extend .col-3
+    +flex(flex-end, center)
+    +lg
+      width: auto      
+    +xs
+      display: none
+  &__burger
+    display: none
+    padding-right: 15px
+    +lg
+      +flex(flex-end, center)
+  &__close
+    +icon-close(20, 1, currentColor)
+    position: absolute
+    top: 15px
+    right: 15px
+    z-index: 1
+    display: none
+    +lg
+      display: block
+  &__contacts-mob, &__social-mob
+    display: none
+    padding-top: 15px
+    padding-bottom: 15px
+    +lg
+      display: block
+  &__social-mob
+    padding-left: 15px
+    padding-right: 15px
+  &__btn-mob
+    display: none
+    +xs
+      display: block
+      padding-left: 15px
+      padding-right: 15px
+      padding-top: 15px
+
 
 
 .header-contact
@@ -46,3 +151,35 @@
   .icon
     font-size: 1.2em
     margin-right: .2em
+
+.burger 
+  display: block
+  width: 28px
+  height: 28px
+  // margin-top: -24px
+  position: relative
+  span:after, span:before 
+    content: ""
+    position: absolute
+    left: 0
+  span:after
+    top: 5px
+  span:before
+    bottom: 5px
+  span 
+    // position: relative
+    display: block
+  span, span:after, span:before
+    width: 100%
+    height: 2px
+    background-color: currentColor
+    transition: all 0.3s
+    backface-visibility: hidden
+    border-radius: 2px
+  // &.is-active span 
+  //   background-color: transparent
+  // &.is-active span:before 
+  //   transform: rotate(45deg) translate(-1px, 0px)
+  // &.is-active span:after 
+  //   transform: rotate(-45deg) translate(6px, -7px)
+

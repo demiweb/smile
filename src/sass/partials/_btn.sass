@@ -6,17 +6,20 @@
   color: $white
   background-color: $accent-2
   border: 1px solid  $accent-2
-  min-width: 272px
+  min-width: $btn-width
   border-radius: 30px
-  padding: 1em
+  padding: 1em 1.8em
   +tr(background-color .3s, border-color .3s, color .3s)
   +hover
     background-color: $accent-1
     border-color: $accent-1
+  +xs
+    min-width: 0
+    width: 100%
 
   &--combine
     height: 55px
-    padding-right: 45px
+    padding-right: 65px
     position: relative
     background-color: $accent-1
     border-color: $accent-1
@@ -37,4 +40,8 @@
         +icon-arrow(8, 8, 1, $accent-1, 225)
         display: block
         margin-right: 4px
+
+  &--full
+    min-width: 0
+    width: 100%
 

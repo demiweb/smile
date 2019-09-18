@@ -2,10 +2,13 @@
   color: $c-title
   ul
     +flex(space-between, center)
+    +lg
+      display: block
   li
-    // display: inline-block
-    // +notlast
-    //   margin-right: 65px
+    +lg
+      padding: 10px
+      // height: 41px
+      border-bottom: 1px solid $c-text
     &.has-dropdown
       position: relative
       > a
@@ -15,6 +18,31 @@
           margin-left: 5px
           display: inline-block
           top: -.1em
+          +lg
+            display: none
+      +lg
+        padding-right: 50px
+        +after
+          +icon-arrow(7, 7, 1, currentColor, -45)
+          display: inline-block
+          position: absolute
+          top: 15px
+          right: 17px
+          z-index: 1
+        +before
+          height: 42px
+          width: 40px
+          background-color: $accent-2
+          position: absolute
+          top: 0
+          right: 0
+          z-index: 0
+      &:hover
+        .nav--dropdown
+          visibility: visible
+          opacity: 1
+          +lg
+            display: block
 
   a
     +tr(color .3s)
@@ -26,6 +54,63 @@
 .nav--dropdown
   position: absolute
   z-index: 1
-  left: 0
+  left: 50%
+  transform: translate(-50%, 0)
+  top: 100%
+  background-color: transparent
+  width: 250px
   visibility: hidden
   opacity: 0
+  padding-top: 20px
+  +ready
+    +tr(visibility .3s, opacity .3s, transform .3s)
+  +lg
+    position: static
+    width: auto
+    margin-left: -10px
+    margin-right: -50px
+    transform: translate(0, 0)
+    visibility: visible
+    opacity: 1
+    display: none
+    // max-height: 0
+    // overflow: hidden
+
+  li
+    display: block
+    +lg
+      border-bottom: 0
+  ul
+    display: block
+    background-color: $accent-1
+    +lg
+      background-color: $white
+  a
+    display: block
+    padding: 10px
+    +hover
+      background-color: $accent-2
+      color: $white
+    +lg
+      padding: 0
+      display: inline
+  .is-active
+    background-color: $accent-2
+    color: $white
+    +lg
+      color: $accent-1
+      background-color: transparent
+
+.nav--footer
+  color: $white
+  ul
+    display: block
+  li
+    display: block
+    +notlast
+      margin-bottom: 15px
+      +md
+        margin-bottom: 10px
+  a
+    +hover
+      color: $c-text

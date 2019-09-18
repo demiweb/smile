@@ -7,6 +7,8 @@ body
   font-family: 'helveticaneuecyr', Arial, sans-serif
   color: $c-text
   +no-scroll
+  +sm
+    font-size: 14px
 
 .icon
   display: inline-block
@@ -25,6 +27,21 @@ body
   padding-left: 15px
   padding-right: 15px
 
+.out
+  // padding-top: $header-height
+  +lg
+    padding-top: $header-height-lg
+  +xs
+    padding-top: $header-height-xs
+
+.logo
+  display: inline-block
+  font-size: 0
+  +lg
+    width: 110px
+  +xs
+    width: 100px
+
 .meta-list
   dl
     +clr
@@ -35,3 +52,64 @@ body
     margin-right: 5px
   dd
     margin-bottom: 10px
+
+.date
+  .icon
+    margin-right: 5px
+    font-size: 1.1em
+    position: relative
+    top: .1em
+
+.stext
+  max-height: 335px
+  overflow: auto
+  font-size: $fz-sm
+  h1, h2, h3
+    @extend .title
+    @extend .title--bold
+    @extend .title--ttn
+    margin-bottom: 5px
+  h1
+    @extend .title--h2
+  h2
+    @extend .title--h3
+  h3
+    @extend .title--h5
+  a
+    color: $blue
+    text-decoration: underline
+
+  p, ul, ol
+    margin-bottom: 20px
+    +md
+      margin: 10px
+  ul
+    list-style-type: disc
+    margin-left: 1.1em
+  ol
+    list-style-type: decimal
+    margin-left: 1.1em
+
+.user-img
+  width: 120px
+  height: 120px
+  flex: 0 0 120px
+  border: 5px solid $accent-1
+  border-radius: 50%
+  +cover
+  background-color: $gray-light
+  +lg
+    width: 100px
+    height: 100px
+    flex: 0 0 100px
+  +md
+    width: 80px
+    height: 80px
+    flex: 0 0 80px
+  +sm
+    width: 60px
+    height: 60px
+    flex: 0 0 60px
+    border-width: 3px
+  &--accent-2
+    border-color: $accent-2
