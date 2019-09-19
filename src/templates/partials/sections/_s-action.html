@@ -3,7 +3,8 @@ actions = [
   {
     img: '01.jpg',
     title: 'ЗАБИРАЙ -25% НА ОТБЕЛИВАНИЕ',
-    text: 'До 31 сентября 1450 грн. вместо 2185 грн. Успей!'
+    text: 'До 31 сентября 1450 грн. вместо 2185 грн. Успей!',
+    label: true
   },
   {
     img: '02.jpg',
@@ -44,7 +45,8 @@ actions = [
             img = i.img,
             title = i.title,
             text = i.text,
-            button = { title: 'Успеть до конца акции', mod: 'btn--full' }
+            button = { title: 'Успеть до конца акции', mod: 'btn--full' },
+            label = i.label
           ) }}
         </div>
         {% endfor %}

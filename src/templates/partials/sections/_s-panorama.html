@@ -1,0 +1,24 @@
+{%set
+  section = {
+    mod: 'pb-0',
+    title: {
+      title: '3d тур'
+    },
+    subttl: {
+      text: 'Теперь у вас есть возможность увидеть каждый уголок нашей стоматологии <br>
+онлайн с помощью 3D тура'
+    }
+  }
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+<!-- begin panorama -->
+<div class="panorama">
+  <iframe class="js-lazy" data-src="https://www.google.com/maps/embed?pb=!4v1568897285348!6m8!1m7!1sCAoSLEFGMVFpcE41eTZBMVI5SlFMOUJ1YUlxbXhrMVR1emRCOXdoS0tkeGluQkVY!2m2!1d50.43873323768025!2d30.47425936907529!3f40!4f0!5f0.7820865974627469" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+<!-- end panorama -->
+{% endblock %}
+
+

@@ -1,0 +1,33 @@
+{%set
+section = {
+  mod: 'pb-0',
+  title: {
+    title: 'цены на стоматологические услуги'
+  },
+  subttl: {
+    text: 'Ценовая политика нашей стоматологической клиники, в отличие от большинства других киевских учреждений, 
+  позволяет даже людям со средним достатком качественно лечить зубы и заботиться о своём здоровье. '
+  }
+}
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+<!-- begin prices -->
+<div class="prices accordion js-accordion">
+  {% for i in prices %}
+  <!-- begin accorion-item -->
+  <div class="accorion-item">
+    <button class="accorion-item__title js-accordion-title">
+      {{ i.title| safe }}
+      <span class="accorion-item__icon"></span>
+    </button>
+
+    <div class="accorion-item__content js-accordion-item">{{ i.content | safe }}</div>
+  </div>
+  <!-- end accorion-item -->
+  {% endfor %}
+</div>
+<!-- end prices -->
+{% endblock %}

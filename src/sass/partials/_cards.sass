@@ -11,8 +11,9 @@
     height: calc(100% - 15px)
   &__img
     +cover
-    background-color: $c-text
+    background-color: $gray-light
     padding-top: 50%
+    position: relative
     +lg
       margin-bottom: 15px
   &__content
@@ -33,6 +34,22 @@
       margin-bottom: 15px
   &__btn
     max-width: $btn-width
+  &__label
+    position: absolute
+    z-index: 1
+    color: $white
+    background-color: $red
+    +css-lock(18, 48, 320, 1399, font-size)
+    font-weight: 700
+    text-align: center
+    padding-left: 15px
+    padding-right: 15px
+    // padding: 15px
+    border-top-right-radius: $radius
+    border-bottom-right-radius: $radius
+    top: 50%
+    transform: translate(0, -50%)
+    left: 0
 
   &--center
     text-align: center

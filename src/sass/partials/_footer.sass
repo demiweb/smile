@@ -4,12 +4,20 @@
   &__inner
     padding-top: 115px
     padding-bottom: 60px
+    +xl
+      padding-top: 100px
+      padding-bottom: 50px
+    +lg
+      padding-top: 30px
+      padding-bottom: 30px
   &__title
     margin-bottom: 15px
     +md
       margin-bottom: 10px
   &__text
     font-size: 13px
+    +lg
+      margin-bottom: 15px
   &__nav
     +notlast
       margin-bottom: 20px
@@ -34,3 +42,6 @@
       text-decoration: underline
       +hover
         color: $c-text
+  &__block
+    +sm
+      margin-bottom: 15px

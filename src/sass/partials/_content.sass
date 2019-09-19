@@ -1,0 +1,35 @@
+.content
+  img
+    width: 100%
+    margin-bottom: 50px
+    border-radius: $radius
+    +xl
+      margin-bottom: 40px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 20px
+  &__block
+    margin-bottom: 50px
+    border-radius: $radius
+    +xl
+      margin-bottom: 40px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 20px
+  &__block-flex
+    +flex(flex-start, normal, row, wrap)
+  &__left
+    width: percentage(8/12)
+    +lg
+      width: 100%
+      margin-bottom: 30px
+    +md
+      // margin-bottom: 15px
+  &__right
+    width: percentage(4/12)
+    padding-left: 15px
+    +lg
+      width: 100%
+      padding-left: 0

@@ -1,0 +1,23 @@
+---
+title: about
+page: about
+hero: {
+  mod: '',
+  bg: 'bg-hero-about.jpg',
+  title: 'О нас',
+  btns: [
+    {
+      title: 'Записаться на приём'
+    }
+  ]
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-why.html" %}
+  {% include "partials/sections/_s-team.html" %}
+  {% include "partials/sections/_s-panorama.html" %}
+  {% include "partials/sections/_s-contacts.html" %}
+{% endblock %}

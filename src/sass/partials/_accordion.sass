@@ -1,0 +1,77 @@
+.accordion
+
+.accorion-item
+  $this: &
+  border-bottom: 1px solid  $gray-light
+  font-size: 15px
+  +sm
+    font-size: $fz-sm
+  &__title
+    display: block
+    text-align: left
+    width: 100%
+    padding-top: 15px
+    padding-bottom: 15px
+    font-weight: 500
+    text-transform: uppercase
+    color: $c-title
+    +tr(color .3s)
+    position: relative
+    padding-right: 60px
+    +sm
+      padding-top: 10px
+      padding-bottom: 10px
+  
+    &.is-active
+      color: $accent-2
+      #{$this}__icon
+        &::after
+          display: none
+    +hover
+      color: $accent-2
+  &__icon
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    z-index: 0
+    position: absolute
+    top: 50%
+    transform: translate(0, -50%)
+    right: 0
+    background-color: $accent-2
+    +sm
+      width: 30px
+      height: 30px
+    &::before, &::after
+      content: ''
+      background-color: $white
+      +vcenter
+      border-radius: 3px
+    &::before
+      width: 20px
+      height: 2px
+      +sm
+        width: 15px
+    &::after
+      width: 2px
+      height: 20px
+      +sm
+        height: 15px
+  &__content
+    max-height: 0
+    overflow: hidden
+    strong
+      color: $c-title
+    p
+      +notlast
+        margin-bottom: 15px
+        +md
+          margin-bottom: 10px
+    &.is-active
+      padding-top: 15px
+      padding-bottom: 15px
+      overflow: visible
+      max-height: none
+      +sm
+        padding-top: 10px
+        padding-bottom: 10px

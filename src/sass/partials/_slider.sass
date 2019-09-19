@@ -19,8 +19,7 @@
         background-color: $gray-light
         &.tns-nav-active
           background-color: $accent-2
-
-  &--team      
+  &--team
     &__wrap
       +flex(space-between, normal, column)
       +md
@@ -31,21 +30,22 @@
         .tns-outer
           display: inline-block
           vertical-align: middle
-          width: calc(100% - 90px)
+          width: 100%
+          // width: calc(100% - 90px)
       +sm        
         .tns-outer
           width: 100%
       .slider
         &__prev, &__next
+          display: block
           margin-left: auto
           margin-right: auto
           +md
-            margin-left: 0
-            margin-right: 0
-            display: inline-block
-            vertical-align: middle
-          +sm
             display: none
+            // margin-left: 0
+            // margin-right: 0
+            // display: inline-block
+            // vertical-align: middle
   &--items
     +flex
     &__wrap
@@ -53,6 +53,10 @@
         padding-top: 10px
         padding-bottom: 10px
     .slide
+
+.slide
+  +sm
+    font-size: 14px !important
 
 
 .prev, .next

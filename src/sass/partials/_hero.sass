@@ -1,12 +1,18 @@
 .hero
+  $this: &
   +cover
+  background-color: $gray-light
   &__inner
-    padding-top: 20%
-    padding-bottom: 20%
-    +cover
+    padding-top: 10%
+    padding-bottom: 10%
+    // +cover
   &__title
     margin-bottom: 40px
     +lg
       margin-bottom: 30px
     +sm
       margin-bottom: 15px
+  &--lg
+    #{$this}__inner
+      padding-top: 20%
+      padding-bottom: 20%

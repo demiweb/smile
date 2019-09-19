@@ -29,6 +29,7 @@
           top: 15px
           right: 17px
           z-index: 1
+          pointer-events: none
         +before
           height: 42px
           width: 40px
@@ -37,19 +38,27 @@
           top: 0
           right: 0
           z-index: 0
-      &:hover
+          pointer-events: none
+      +sm
+        +before
+          height: 39px
+      +hover
         .nav--dropdown
           visibility: visible
           opacity: 1
           +lg
-            display: block
+            // display: block
+            max-height: none
+            overflow: visible
+            margin-top: 10px
+
 
   a
     +tr(color .3s)
     +hover
       color: $accent-1
-  .is-active
-    color: $accent-1
+    &.is-active
+      color: $accent-1
 
 .nav--dropdown
   position: absolute
@@ -72,14 +81,24 @@
     transform: translate(0, 0)
     visibility: visible
     opacity: 1
-    display: none
-    // max-height: 0
-    // overflow: hidden
-
+    // display: none
+    // margin-top: 10px
+    padding-top: 0
+    max-height: 0
+    overflow: hidden
+  &.is-active
+    visibility: visible
+    opacity: 1
+    +lg
+      // display: block
+      max-height: none
+      overflow: visible
+      margin-top: 10px
   li
     display: block
     +lg
       border-bottom: 0
+      padding: 0
   ul
     display: block
     background-color: $accent-1
@@ -92,14 +111,14 @@
       background-color: $accent-2
       color: $white
     +lg
-      padding: 0
-      display: inline
-  .is-active
-    background-color: $accent-2
-    color: $white
-    +lg
-      color: $accent-1
-      background-color: transparent
+      // padding: 0
+      // display: inline
+    &.is-active
+      background-color: $accent-2
+      color: $white
+      +lg
+        color: $accent-1
+        background-color: transparent
 
 .nav--footer
   color: $white
@@ -111,6 +130,9 @@
       margin-bottom: 15px
       +md
         margin-bottom: 10px
+    +lg
+      padding: 0
+      border-bottom: 0
   a
     +hover
       color: $c-text

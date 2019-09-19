@@ -1,9 +1,16 @@
 .contacts-block
+  $this: &
   text-align: center
   background-color: $white
   box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.15)  
   border-radius: $radius
   padding: 30px 30px 50px
+  +xl
+    padding: 30px
+  +lg
+    padding: 20px
+  +md
+    margin-bottom: 25px
   &__btn
     margin-left: auto
     margin-right: auto
@@ -12,6 +19,38 @@
     margin-bottom: 30px
     +md
       margin-bottom: 15px
+  &__social    
+    margin-bottom: 45px
+    .social
+      margin-top: 10px
+    +xl
+      margin-bottom: 35px
+    +lg
+      margin-bottom: 25px
+    +md
+      margin-bottom: 15px
+  
+
+  &--hor
+    padding-left: 0 !important
+    padding-right: 0 !important
+    box-shadow: none
+    border-radius: 0
+    +md
+      margin-bottom: 0
+      padding-bottom: 0
+    #{$this}__contacts
+      +flex(space-between)
+      .contact-info-block
+        width: 33.33333%
+        +notlast
+          border-right: 1px solid  $gray-light
+      +xss
+        display: block
+        .contact-info-block
+          width: auto
+          +notlast
+            border-right: 0
 
 .contact-info-block
   margin-bottom: 50px
@@ -29,11 +68,38 @@
     margin-bottom: 15px
     +md
       margin-bottom: 10px
+  &__icon
+    color: $white
+    +flex(center, center)
+    width: 35px
+    height: 35px
+    border-radius: 50%
+    background-color: $accent-1
+    margin-bottom: 10px
+    margin-left: auto
+    margin-right: auto
+
 
 .map
   position: relative
   padding-top: 50%
   background-color: $gray-light
+  overflow: hidden
+  +xss
+    padding-top: 70%
+  iframe
+    +coverdiv
+    z-index: 1
+  &--lg
+    border-radius: $radius
+    padding-top: 60%
+
+.panorama
+  position: relative
+  padding-top: 60%
+  background-color: $gray-light
+  +xss
+    padding-top: 70%
   iframe
     +coverdiv
     z-index: 1

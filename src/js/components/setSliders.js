@@ -22,9 +22,8 @@ class MySlider {
 
   get teamDescOptions() {
     const slider = document.querySelector('.js-slider[data-slider="team"]');
-    const wrap = slider.closest('.slider__wrap');
     const { prev, next } = {
-      prev: wrap.querySelector('.js-slider-prev'),
+      prev: this.wrap.querySelector('.js-slider-prev'),
       next: this.wrap.querySelector('.js-slider-next'),
     };
     return {
@@ -41,9 +40,8 @@ class MySlider {
 
   get teamMobOptions() {
     const slider = document.querySelector('.js-slider[data-slider="team"]');
-    const wrap = slider.closest('.slider__wrap');
     const { prev, next } = {
-      prev: wrap.querySelector('.js-slider-prev'),
+      prev: this.wrap.querySelector('.js-slider-prev'),
       next: this.wrap.querySelector('.js-slider-next'),
     };
     return {
@@ -57,9 +55,6 @@ class MySlider {
       responsive: {
         768: {
           items: 2,
-          nextButton: next,
-          prevButton: prev,
-          nav: false,
         },
       },
     };
@@ -110,31 +105,39 @@ export default function setSliders() {
 
   function getOptions({ nextButton, prevButton, container }) {
     return {
-      team: {
-        container,
-        prevButton,
-        nextButton,
-        mouseDrag: true,
-        axis: 'horizontal',
-        nav: false,
-        items: 3,
-        onInit: setLazy,
-        // responsive: {
-        //   992: {
-        //     axis: 'vertical',
-        //     preventScrollOnTouch: 'force',
-        //   },
-        // },
-      },
+      // team: {
+      //   container,
+      //   prevButton,
+      //   nextButton,
+      //   mouseDrag: true,
+      //   axis: 'horizontal',
+      //   nav: false,
+      //   items: 3,
+      //   onInit: setLazy,
+      //   // responsive: {
+      //   //   992: {
+      //   //     axis: 'vertical',
+      //   //     preventScrollOnTouch: 'force',
+      //   //   },
+      //   // },
+      // },
       items: {
         container,
         prevButton,
         nextButton,
         mouseDrag: true,
         nav: false,
-        items: 3,
+        items: 1,
         onInit: setLazy,
         gutter: 30,
+        responsive: {
+          576: {
+            items: 2,
+          },
+          992: {
+            items: 3,
+          },
+        },
       },
     };
   }

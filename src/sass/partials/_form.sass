@@ -1,0 +1,40 @@
+.form
+  text-align: center
+  background-color: $white
+  border-radius: $radius
+  box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.17)
+  padding: 80px 30px
+  +lg
+    padding: 60px 20px
+  +md
+    padding: 40px 20px
+  +sm
+    padding: 20px 15px
+  &__title
+    margin-bottom: 20px
+    +md
+      margin-bottom: 10px
+  &__subttl
+    margin-bottom: 35px
+    +md
+      margin-bottom: 20px
+  &__field
+    +notlast
+      margin-bottom: 50px
+      +xl
+        margin-bottom: 40px
+      +lg
+        margin-bottom: 30px
+      +md
+        margin-bottom: 15px
+
+.input, .textarea
+  input, textarea
+    border: 0
+    border-bottom: 1px solid $c-text
+    height: 32px
+    padding: 5px 0
+    width: 100%
+    +tr(border-color .3s)
+    &:focus
+      border-color: $accent-2

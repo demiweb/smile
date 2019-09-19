@@ -1,0 +1,22 @@
+---
+title: contacts
+page: contacts
+hero: {
+  mod: '',
+  bg: 'bg-hero-contacts.jpg',
+  title: 'Контакты',
+  btns: [
+    {
+      title: 'Записаться на приём'
+    }
+  ]
+}
+
+
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-contacts-full.html" %}
+{% endblock %}

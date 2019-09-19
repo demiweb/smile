@@ -1,0 +1,76 @@
+{%set
+section = {
+  mod: 'pb-0',
+  title: {
+    title: 'почему именно мы?',
+    wrapMod: 'section__title-mb-lg'
+  }
+}
+%}
+
+{%set
+form = {
+  title: 'Записаться на прием',
+  subttl: 'Оставьте ваши данные ниже и наш менеджер
+свяжется с вами в ближайшее время',
+  fields: [
+    {
+      name: 'input',
+      mod: '',
+      type: 'text',
+      fieldClass: '',
+      placeholder: 'Имя',
+      fieldAttributes: {}
+    },
+    {
+      name: 'input',
+      mod: '',
+      type: 'tel',
+      fieldClass: '',
+      placeholder: '+38 ( _ _ _ ) _ _ _ - _ _ - _ _',
+      fieldAttributes: {}
+    },
+    {
+      name: 'textarea',
+      mod: '',
+      type: '',
+      fieldClass: 'js-textarea',
+      placeholder: 'На какую услугу хотите записаться?',
+      fieldAttributes: {}
+    }
+  ]
+}
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+<!-- begin content -->
+<div class="content">
+  <div class="content__block content__block-flex">
+    <div class="content__left">
+      <img class="js-lazy" alt="" data-src="./img/photo-945.jpg"/>
+
+      <blockquote>
+        У нас очень уютно дружественная атмосфера дизайн клиники разработан таким образом, чтобы 
+создать максимально уютно и уйти от традиционного неприятного впечатления о стоматологии.
+      </blockquote>
+    </div>
+
+    <div class="content__right">
+      {% include "partials/_form.html" %}
+    </div>
+  </div>
+
+  <div class="content__block">
+    <div class="list">
+      <ul>
+        <li>Мы заботимся о каждом нашем клиенте, знаем его историю, умеем подобрать нужные методы лечения именно для него, создать домашнюю обстановку, у нас в в мягких креслах пациенты расслабляются и даже спят (правда-правда!)</li>
+        <li>Наша пациенты становятся со временем нашими хорошими друзьями, приходят к нам в гости просто так, нам действительно интересно что происходит в их жизни и мы очень рады всех видеть даже просто в гости.</li>
+        <li>У нас каждый инструмент проходит 3хэтапную обработку и стерилизацию и правильное хранение в стерильных пакетах, мы обновляем инструменты материалы и технологии мы очень много вкладываем средства для применение самых новых материалов для лечения и профилактики зубов наших пациентов.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- end content -->
+{% endblock %}

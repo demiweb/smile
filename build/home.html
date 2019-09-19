@@ -106,7 +106,7 @@
             <div class="header__inner">
               <div class="header__logo">
                 <a href="/" class="logo">
-                  <img class="js-lazy" alt="" data-src="./img/logo.png" />
+                  <img class="js-lazy" alt="" width="250" height="85" data-src="./img/logo.svg" />
                 </a>
               </div>
               <div class="header__nav js-menu">
@@ -116,9 +116,9 @@
                   <nav class="nav">
                     <ul>
                       <li><a href="#" class=" is-active">Главная</a></li>
-                      <li class=" has-dropdown"><a href="#">Взрослым</a>
+                      <li class=" has-dropdown js-dropdown-btn"><a href="#">Взрослым</a>
                         <!-- begin nav -->
-                        <nav class="nav nav--dropdown">
+                        <nav class="nav nav--dropdown js-dropdown">
                           <ul>
                             <li><a href="#" class=" is-active">item 1</a></li>
                             <li><a href="#">item 2</a></li>
@@ -127,9 +127,9 @@
                         </nav>
                         <!-- end nav -->
                       </li>
-                      <li class=" has-dropdown"><a href="#">Детям</a>
+                      <li class=" has-dropdown js-dropdown-btn"><a href="#">Детям</a>
                         <!-- begin nav -->
-                        <nav class="nav nav--dropdown">
+                        <nav class="nav nav--dropdown js-dropdown">
                           <ul>
                             <li><a href="#" class=" is-active">item 1</a></li>
                             <li><a href="#">item 2</a></li>
@@ -250,7 +250,7 @@
       <!-- begin main -->
       <main class="main">
         <!-- begin hero -->
-        <section class="hero js-lazy" data-background-image="./img/hero/bg-hero-home.jpg">
+        <section class="hero hero--lg js-lazy" data-background-image="./img/hero/bg-hero-home.jpg">
           <div class="container">
             <div class="hero__inner">
               <div class="row">
@@ -283,6 +283,7 @@
                   <!-- begin card -->
                   <div class="card">
                     <div class="card__img js-lazy" data-background-image="./img/actions/01.jpg">
+                      <div class="card__label label">-25%</div>
                     </div>
                     <div class="card__content">
                       <div class="card__title">
@@ -358,7 +359,7 @@
                         <!-- begin slide -->
                         <div class="slide">
                           <!-- begin member -->
-                          <button class="member js-team-btn  is-active" data-member="">
+                          <button class="member js-team-btn  is-active" data-member="member-01">
                             <span class="member__img user-img  user-img--accent-2 js-lazy" data-background-image="./img/team/01.jpg"></span>
                             <span class="member__content">
                               <span class="member__title">
@@ -373,7 +374,7 @@
                         <!-- begin slide -->
                         <div class="slide">
                           <!-- begin member -->
-                          <button class="member js-team-btn " data-member="">
+                          <button class="member js-team-btn " data-member="member-02">
                             <span class="member__img user-img  user-img--accent-2 js-lazy" data-background-image="./img/team/01.jpg"></span>
                             <span class="member__content">
                               <span class="member__title">
@@ -388,7 +389,7 @@
                         <!-- begin slide -->
                         <div class="slide">
                           <!-- begin member -->
-                          <button class="member js-team-btn " data-member="">
+                          <button class="member js-team-btn " data-member="member-03">
                             <span class="member__img user-img  user-img--accent-2 js-lazy" data-background-image="./img/team/01.jpg"></span>
                             <span class="member__content">
                               <span class="member__title">
@@ -403,7 +404,7 @@
                         <!-- begin slide -->
                         <div class="slide">
                           <!-- begin member -->
-                          <button class="member js-team-btn " data-member="">
+                          <button class="member js-team-btn  is-active" data-member="member-04">
                             <span class="member__img user-img  user-img--accent-2 js-lazy" data-background-image="./img/team/01.jpg"></span>
                             <span class="member__content">
                               <span class="member__title">
@@ -418,7 +419,7 @@
                         <!-- begin slide -->
                         <div class="slide">
                           <!-- begin member -->
-                          <button class="member js-team-btn " data-member="">
+                          <button class="member js-team-btn " data-member="member-05">
                             <span class="member__img user-img  user-img--accent-2 js-lazy" data-background-image="./img/team/01.jpg"></span>
                             <span class="member__content">
                               <span class="member__title">
@@ -433,7 +434,7 @@
                         <!-- begin slide -->
                         <div class="slide">
                           <!-- begin member -->
-                          <button class="member js-team-btn " data-member="">
+                          <button class="member js-team-btn " data-member="member-06">
                             <span class="member__img user-img  user-img--accent-2 js-lazy" data-background-image="./img/team/01.jpg"></span>
                             <span class="member__content">
                               <span class="member__title">
@@ -454,7 +455,7 @@
                 <div class="col-lg-8">
                   <div class="team__descr">
                     <!-- begin member-full -->
-                    <div class="member-full js-team-descr is-active" data-member="">
+                    <div class="member-full js-team-descr is-active" data-member="member-01">
                       <div class="member-full__left">
                         <div class="member-full__img js-lazy" data-background-image="./img/team/lg-01.jpg"></div>
                       </div>
@@ -488,7 +489,7 @@
                     </div>
                     <!-- end member-full -->
                     <!-- begin member-full -->
-                    <div class="member-full js-team-descr" data-member="">
+                    <div class="member-full js-team-descr" data-member="member-02">
                       <div class="member-full__left">
                         <div class="member-full__img js-lazy" data-background-image="./img/team/lg-01.jpg"></div>
                       </div>
@@ -522,7 +523,7 @@
                     </div>
                     <!-- end member-full -->
                     <!-- begin member-full -->
-                    <div class="member-full js-team-descr" data-member="">
+                    <div class="member-full js-team-descr" data-member="member-03">
                       <div class="member-full__left">
                         <div class="member-full__img js-lazy" data-background-image="./img/team/lg-01.jpg"></div>
                       </div>
@@ -556,7 +557,7 @@
                     </div>
                     <!-- end member-full -->
                     <!-- begin member-full -->
-                    <div class="member-full js-team-descr" data-member="">
+                    <div class="member-full js-team-descr is-active" data-member="member-04">
                       <div class="member-full__left">
                         <div class="member-full__img js-lazy" data-background-image="./img/team/lg-01.jpg"></div>
                       </div>
@@ -590,7 +591,7 @@
                     </div>
                     <!-- end member-full -->
                     <!-- begin member-full -->
-                    <div class="member-full js-team-descr" data-member="">
+                    <div class="member-full js-team-descr" data-member="member-05">
                       <div class="member-full__left">
                         <div class="member-full__img js-lazy" data-background-image="./img/team/lg-01.jpg"></div>
                       </div>
@@ -624,7 +625,7 @@
                     </div>
                     <!-- end member-full -->
                     <!-- begin member-full -->
-                    <div class="member-full js-team-descr" data-member="">
+                    <div class="member-full js-team-descr" data-member="member-06">
                       <div class="member-full__left">
                         <div class="member-full__img js-lazy" data-background-image="./img/team/lg-01.jpg"></div>
                       </div>
@@ -673,8 +674,8 @@
             </div>
             <!-- begin cards -->
             <div class="cards">
-              <div class="row">
-                <div class="col-3">
+              <div class="row justify-content-center">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                   <!-- begin card -->
                   <div class="card card--center">
                     <div class="card__img js-lazy" data-background-image="./img/actions/01.jpg">
@@ -691,7 +692,7 @@
                   </div>
                   <!-- end card -->
                 </div>
-                <div class="col-3">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                   <!-- begin card -->
                   <div class="card card--center">
                     <div class="card__img js-lazy" data-background-image="./img/actions/01.jpg">
@@ -708,7 +709,7 @@
                   </div>
                   <!-- end card -->
                 </div>
-                <div class="col-3">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                   <!-- begin card -->
                   <div class="card card--center">
                     <div class="card__img js-lazy" data-background-image="./img/actions/01.jpg">
@@ -725,7 +726,7 @@
                   </div>
                   <!-- end card -->
                 </div>
-                <div class="col-3">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                   <!-- begin card -->
                   <div class="card card--center">
                     <div class="card__img js-lazy" data-background-image="./img/actions/01.jpg">
@@ -749,17 +750,21 @@
         </section>
         <!-- end section -->
         <!-- begin section -->
-        <section class="section section--accent-2 pt-sml pb-sml">
+        <section class="section">
           <div class="container">
-            <div class="section__title section__title-mb-lg">
-              <div class="title title--h2 title--bold title--white">ЗАКАЖИТЕ ОБРАТНЫЙ ЗВОНОК И МЫ СВЯЖЕМСЯ С ВАМИ ПОСЛЕ ТОГО, КАК ДОЛЕЧИМ ПАЦИЕНТА.</div>
+            <!-- begin call -->
+            <div class="call">
+              <div class="section__title section__title-mb-lg">
+                <div class="title title--h2 title--bold title--white">ЗАКАЖИТЕ ОБРАТНЫЙ ЗВОНОК И МЫ СВЯЖЕМСЯ С ВАМИ ПОСЛЕ ТОГО, КАК ДОЛЕЧИМ ПАЦИЕНТА.</div>
+              </div>
+              <div class="call__btn text-center">
+                <button class="btn btn--combine">
+                  <span class="btn__title">Заказать обратный звонок</span>
+                  <span class="btn__icon"></span>
+                </button>
+              </div>
             </div>
-            <div class="section__btn text-center">
-              <button class="btn btn--combine">
-                <span class="btn__title">Заказать обратный звонок</span>
-                <span class="btn__icon"></span>
-              </button>
-            </div>
+            <!-- end call -->
           </div>
         </section>
         <!-- end section -->
@@ -958,7 +963,7 @@
         <section class="section">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-4">
+              <div class="col-lg-4">
                 <!-- begin contacts-block -->
                 <div class="contacts-block">
                   <div class="contacts-block__title">
@@ -1006,7 +1011,7 @@
                 </div>
                 <!-- end contacts-block -->
               </div>
-              <div class="col-8">
+              <div class="col-lg-8">
                 <!-- begin map -->
                 <div class="map">
                   <iframe class="js-lazy" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.1343417285043!2d30.472449715895838!3d50.43859829609961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce96a93c5927%3A0x411730c06fba94f2!2z0YPQuy4g0K7Qu9C40YPRgdCwINCk0YPRh9C40LrQsCwgNCwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1568797057999!5m2!1sru!2sua" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
@@ -1024,10 +1029,10 @@
         <div class="container">
           <div class="footer__inner">
             <div class="row">
-              <div class="col-3">
+              <div class="col-xl-3">
                 <div class="footer__logo">
                   <a href="#" class="logo">
-                    <img class="js-lazy" alt="" data-src="./img/logo-white.png" />
+                    <img class="js-lazy" alt="" width="250" height="50" data-src="./img/logo-white.svg" />
                   </a>
                 </div>
                 <div class="footer__text">
@@ -1035,7 +1040,7 @@
                   <p>2019 &copy; Все права защищены</p>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-xl-2 col-md-3 col-6">
                 <div class="footer__block">
                   <div class="footer__title">
                     <div class="title title--h6 title--white">Полезные ссылки</div>
@@ -1053,7 +1058,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-xl-2 col-md-3 col-6">
                 <div class="footer__block">
                   <div class="footer__title">
                     <div class="title title--h6 title--white">Клиентам</div>
@@ -1071,7 +1076,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-xl-2 col-md-3 col-6">
                 <div class="footer__block">
                   <div class="footer__title">
                     <div class="title title--h6 title--white">Связаться с нами</div>
@@ -1089,7 +1094,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-md-3 col-6">
                 <div class="footer__block">
                   <div class="footer__title">
                     <div class="title title--h6 title--white">Полезные ссылки</div>

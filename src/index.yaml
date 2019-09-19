@@ -2,3 +2,7 @@ ProjectTitle: smile
 
 PageList:
 - file: home.html
+- file: about.html
+- file: prices.html
+- file: contacts.html
+

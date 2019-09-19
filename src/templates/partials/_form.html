@@ -1,0 +1,37 @@
+<!-- begin form -->
+<div class="form">
+  <form>
+    {% if form.title %}
+    <div class="form__title">
+      <div class="title title--bold title--sm title--ttn">{{ form.title | safe }}</div>
+    </div>
+    {% endif %}
+    
+    {% if form.subttl %}
+    <div class="form__subttl">{{ form.subttl | safe }}</div>
+    {% endif %}
+
+    {% for i in form.fields %}
+    <div class="form__field">
+      {{ mixins.input(
+        name = i.name,
+        mod = i.mod,
+        type = i.type,
+        placeholder = i.placeholder,
+        value = '',
+        fieldClass = i.fieldClass,
+        fieldAttributes = i.fieldAttributes
+      ) }}
+    </div>
+    {% endfor %}
+
+    <div class="form__field">
+      {{ mixins.btn(
+        title = form.btn.title or 'Записаться на приём',
+        mod = form.btn.mod,
+        href = false
+      ) }}
+    </div>
+  </form>
+</div>
+<!-- end form -->
