@@ -32,3 +32,19 @@ export const isWebkit = isChrome
   || isIOS;
 
 export const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints;
+
+export function slideToggle(el) {
+  const item = el;
+  const { maxHeight } = window.getComputedStyle(item);
+
+  if (maxHeight === '0px') {
+    item.style.maxHeight = `${item.scrollHeight}px`;
+  } else {
+    item.style.maxHeight = '';
+  }
+}
+
+export function slideUp(el) {
+  const item = el;
+  item.style.maxHeight = '';
+}

@@ -1,0 +1,18 @@
+---
+title: blog-page
+page: blog-page
+hero: {
+  mod: 'text-center',
+  colMod: 'col-md-6 offset-md-3',
+  bg: 'bg-hero-article.jpg',
+  title: 'Как правильно выбрать стоматолога,
+  которого полюбит вся семья',
+  meta: true
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-blog-page.html" %}
+{% endblock %}

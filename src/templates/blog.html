@@ -1,0 +1,16 @@
+---
+title: blog
+page: blog
+hero: {
+  mod: 'text-center',
+  colMod: 'col-12',
+  bg: 'bg-hero-blog.jpg',
+  title: 'Следите за нашим блогом'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-blog.html" %}
+{% endblock %}

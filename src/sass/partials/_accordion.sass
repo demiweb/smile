@@ -15,7 +15,7 @@
     font-weight: 500
     text-transform: uppercase
     color: $c-title
-    +tr(color .3s)
+    +tr(color .3s, margin .5s)
     position: relative
     padding-right: 60px
     +sm
@@ -24,9 +24,12 @@
   
     &.is-active
       color: $accent-2
+      margin-bottom: 15px
       #{$this}__icon
         &::after
           display: none
+      +sm
+        margin-bottom: 10px
     +hover
       color: $accent-2
   &__icon
@@ -60,6 +63,10 @@
   &__content
     max-height: 0
     overflow: hidden
+    // padding-top: 15px
+    // padding-bottom: 15px
+    +ready
+      +tr(max-height .5s, margin .5s)
     strong
       color: $c-title
     p
@@ -68,10 +75,6 @@
         +md
           margin-bottom: 10px
     &.is-active
-      padding-top: 15px
-      padding-bottom: 15px
-      overflow: visible
-      max-height: none
+      margin-bottom: 15px
       +sm
-        padding-top: 10px
-        padding-bottom: 10px
+        margin-bottom: 15px

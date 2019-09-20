@@ -1,4 +1,5 @@
 import { IS_ACTIVE } from '../constants';
+import { slideToggle, slideUp } from '../helpers';
 
 class Accordion {
   init() {
@@ -20,6 +21,8 @@ class Accordion {
 
     this.title.classList.toggle(IS_ACTIVE);
     this.content.classList.toggle(IS_ACTIVE);
+
+    slideToggle(this.content);
 
     if (this.onToggle) {
       this.onToggle();

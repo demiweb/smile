@@ -1,0 +1,36 @@
+<!-- begin article -->
+<div class="article">
+  <div class="article__img js-lazy" data-background-image="./img/blog/article-sm.jpg"></div>
+
+  <div class="article__content">
+    <div class="article__blog-meta">
+    <!-- begin blog-meta -->
+    <div class="blog-meta">
+      <div class="blog-meta__item">
+        {{ mixins.icon('clock-2', false) }}
+        28 мая, 2019
+      </div>
+      <div class="blog-meta__item">
+        {{ mixins.icon('eye', false) }}
+        103
+      </div>
+    </div>
+    <!-- end blog-meta -->
+    </div>
+
+    <div class="article__title">
+      <div class="title title--h3 title--bold">{{ i.title }}</div>
+    </div>
+
+    <div class="article__text">{{ i.text | safe }}</div>
+
+    <div class="article__btn">
+      {{ mixins.btn(
+        title = 'Читать далее',
+        mod = 'btn--arrow'
+      ) }}
+    </div>
+  </div>
+  
+</div>
+<!-- end article -->

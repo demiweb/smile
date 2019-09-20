@@ -1,4 +1,4 @@
-{% macro icon(i, comments = true) %}
+{% macro icon(i, comments = false) %}
 {% if comments %}<!-- begin icon-{{ i }} -->{% endif %}
   {% include 'icons/_'+ i +'.html' %}
 {% if comments %}<!-- end icon-{{ i }} -->{% endif %}

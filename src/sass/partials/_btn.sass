@@ -18,7 +18,7 @@
     width: 100%
 
   &--combine
-    height: 55px
+    // height: 55px
     padding-right: 65px
     position: relative
     background-color: $accent-1
@@ -28,8 +28,8 @@
       border-color: $accent-2
     #{$this}__icon
       border-radius: 50%
-      width: 45px
-      height: 45px
+      width: 2.8em
+      height: 2.8em
       background-color: $white
       position: absolute
       top: 50%
@@ -44,4 +44,11 @@
   &--full
     min-width: 0
     width: 100%
+
+  &--arrow
+    +after
+      +icon-arrow(8, 8, 1, currentColor, -135)
+      display: inline-block
+      margin-left: 1em
+      position: relative
 

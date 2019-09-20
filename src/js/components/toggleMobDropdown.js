@@ -1,4 +1,5 @@
 import { IS_ACTIVE } from '../constants';
+import { slideUp, slideToggle } from '../helpers';
 
 class Dropdown {
   constructor() {
@@ -21,8 +22,16 @@ class Dropdown {
     this.btnsElse = [...document.querySelectorAll(`.${this.classNames.btn}`)].filter((btn) => btn !== this.btn);
     this.dropdownsElse = this.btnsElse.map((btn) => btn.querySelector(`.${this.classNames.dropdown}`));
 
-    this.btnsElse.forEach((btn) => btn.classList.remove(IS_ACTIVE));
-    this.dropdownsElse.forEach((dropdown) => dropdown.classList.remove(IS_ACTIVE));
+    this.btnsElse.forEach((btn) => {
+      btn.classList.remove(IS_ACTIVE);
+    });
+    this.dropdownsElse.forEach((dropdown) => {
+      slideUp(dropdown);
+      dropdown.classList.remove(IS_ACTIVE);
+    });
+
+
+    slideToggle(this.dropdown);
 
     this.btn.classList.toggle(IS_ACTIVE);
     this.dropdown.classList.toggle(IS_ACTIVE);

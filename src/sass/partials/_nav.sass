@@ -28,7 +28,7 @@
           position: absolute
           top: 15px
           right: 17px
-          z-index: 1
+          z-index: 2
           pointer-events: none
         +before
           height: 42px
@@ -37,7 +37,7 @@
           position: absolute
           top: 0
           right: 0
-          z-index: 0
+          z-index: 1
           pointer-events: none
       +sm
         +before
@@ -51,8 +51,6 @@
             max-height: none
             overflow: visible
             margin-top: 10px
-
-
   a
     +tr(color .3s)
     +hover
@@ -63,26 +61,25 @@
 .nav--dropdown
   position: absolute
   z-index: 1
-  left: 50%
-  transform: translate(-50%, 0)
+  left: 0
   top: 100%
   background-color: transparent
-  width: 250px
+  width: 360px
   visibility: hidden
   opacity: 0
   padding-top: 20px
+  color: $white
   +ready
-    +tr(visibility .3s, opacity .3s, transform .3s)
+    +tr(visibility .3s, opacity .3s, transform .3s, max-height .5s, padding .5s, margin .5s)
   +lg
     position: static
     width: auto
     margin-left: -10px
     margin-right: -50px
     transform: translate(0, 0)
+    color: inherit
     visibility: visible
     opacity: 1
-    // display: none
-    // margin-top: 10px
     padding-top: 0
     max-height: 0
     overflow: hidden
@@ -90,29 +87,51 @@
     visibility: visible
     opacity: 1
     +lg
-      // display: block
-      max-height: none
-      overflow: visible
+      // overflow: visible
       margin-top: 10px
   li
     display: block
     +lg
       border-bottom: 0
       padding: 0
+
+    +notlast
+      border-bottom: 1px solid  #e4a5e4
+    &:first-child
+      a
+        border-top-left-radius: $radius-sm
+        border-top-right-radius: $radius-sm
+        +lg
+          border-radius: 0
+    &:last-child
+      a
+        border-bottom-left-radius: $radius-sm
+        border-bottom-right-radius: $radius-sm
+        +lg
+          border-radius: 0
   ul
     display: block
     background-color: $accent-1
+    border-radius: $radius-sm
+    position: relative
     +lg
       background-color: $white
+      border-radius: 0
+    +before
+      +arr(16, 12, $accent-1, t)
+      position: absolute
+      bottom: 100%
+      left: 10px
+      z-index: 1
+      +lg
+        display: none
   a
     display: block
-    padding: 10px
+    padding: 10px 15px
+    +tr(color .3s, background-color .3s)
     +hover
       background-color: $accent-2
       color: $white
-    +lg
-      // padding: 0
-      // display: inline
     &.is-active
       background-color: $accent-2
       color: $white

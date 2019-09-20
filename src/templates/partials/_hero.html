@@ -16,8 +16,19 @@
         <div class="{% if hero.colMod %}{{ hero.colMod }}{% else %}col-md-6{% endif %}">
           {% if hero.title %}
             <div class="hero__title">
-              <div class="title title--ttn title--white title--shadow title--sm title--bold">{{ hero.title | safe }}</div>
+              <div class="title{% if hero.title.mod %} {{ hero.title.mod }}{% else %} title--ttn title--white title--shadow title--sm title--bold{% endif %}">
+                {% if hero.title.title %}
+                {{ hero.title.title | safe }}
+                {% else %}
+                {{ hero.title | safe }}
+                {% endif %}
+                
+              </div>
             </div>
+          {% endif %}
+
+          {% if hero.subttl %}
+          <div class="hero__subttl">{{ hero.subttl | safe }}</div>
           {% endif %}
 
           {% if hero.btns %}
@@ -34,6 +45,23 @@
             {% endfor %}
           </div>
           {% endif %}
+
+          {% if hero.meta %}
+          <div class="hero__meta">
+            <!-- begin blog-meta -->
+            <div class="blog-meta">
+              <div class="blog-meta__item">
+                {{ mixins.icon('clock-2', false) }}
+                28 мая, 2019
+              </div>
+              <div class="blog-meta__item">
+                {{ mixins.icon('eye', false) }}
+                103
+              </div>
+            </div>
+            <!-- end blog-meta -->
+          </div>
+        {% endif %}
         </div>
       </div>  
     </div>

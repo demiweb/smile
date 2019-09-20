@@ -1,0 +1,22 @@
+---
+title: thanks
+page: thanks
+hero: {
+  mod: 'text-center hero--lg',
+  colMod: 'col-md-6 offset-md-3',
+  bg: 'bg-hero-thanks.jpg',
+  title: 'Спасибо!',
+  subttl: 'Ваша заявка принята и будет обработана в ближайшее время',
+  btns: [
+    {
+      title: 'Перейти на главную',
+      href: '/'
+    }
+  ]
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+{% endblock %}
