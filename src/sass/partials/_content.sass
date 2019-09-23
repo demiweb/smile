@@ -1,7 +1,14 @@
+=counter($var, $sep)
+  counter-reset: list + $var
+  > li
+    &:before
+      content: counter(list + $var) $sep
+      counter-increment: list + $var
+
 .content
-  img
-    width: 100%
+  figure
     margin-bottom: 50px
+    overflow: hidden
     border-radius: $radius
     +xl
       margin-bottom: 40px
@@ -9,6 +16,52 @@
       margin-bottom: 30px
     +md
       margin-bottom: 20px
+    img
+      width: 100% 
+  img
+    display: block
+    margin-left: auto
+    margin-right: auto      
+    
+  h2, h3, h4, ul, ol, p, img
+    margin-bottom: 20px
+    +md
+      margin-bottom: 10px
+  ul
+    @extend .list
+    @extend .list--simple
+  ol
+    +counter(content, "")
+    li
+      +notlast
+        margin-bottom: 25px
+        +md
+          margin-bottom: 10px
+      &::before
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        height: 1.2em
+        min-width: 1.2em
+        text-align: center
+        border-radius: 50%
+        color: $white
+        margin-right: .3em
+        background-color: $accent-2
+  h2, h3, h4
+    @extend .title
+    @extend .title--bold
+    @extend .title--ttn
+  h2
+    @extend .title--h2
+  h3
+    @extend .title--h3
+  h4
+    @extend .title--h5
+  a
+    text-decoration: underline
+    color: $accent-2
+    +tr(color .3s)
   &__block
     margin-bottom: 50px
     border-radius: $radius
@@ -22,14 +75,35 @@
     +flex(flex-start, normal, row, wrap)
   &__left
     width: percentage(8/12)
+    padding-right: 15px
     +lg
       width: 100%
+      padding-right: 0
       margin-bottom: 30px
-    +md
-      // margin-bottom: 15px
+
   &__right
     width: percentage(4/12)
     padding-left: 15px
     +lg
       width: 100%
       padding-left: 0
+  &__left-3
+    width: percentage(3/12)
+    +lg
+      width: percentage(3/12)
+      padding-right: 15px
+    +md
+      width: percentage(4/12)
+    +xs
+      width: 100%
+      padding-right: 0
+  &__right-9
+    width: percentage(9/12)
+    +lg
+      width: percentage(9/12)
+      padding-left: 15px
+    +md
+      width: percentage(8/12)
+    +xs
+      padding-left: 0
+      width: 100%

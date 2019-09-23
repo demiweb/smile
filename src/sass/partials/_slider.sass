@@ -93,6 +93,21 @@
         +md
           transform: scaleX(-1)
 
+  &--sm
+    &__wrap
+      .slider__controls
+        // padding-top: 10px
+        .prev, .next
+          margin-left: 3px
+          margin-right: 3px
+    .slide
+      &__img
+        // +cover
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        background-size: contain
+        padding-top: 100%
+
 .slide
   .article
     height: 100% !important

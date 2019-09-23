@@ -92,7 +92,7 @@
             <div class="header__inner">
               <div class="header__logo">
                 <a href="/" class="logo">
-                  <img class="js-lazy" alt="" width="250" height="85" data-src="./img/logo.svg" />
+                  <img src="" class="js-lazy" alt="" width="250" height="85" data-src="./img/logo.svg" />
                 </a>
               </div>
               <div class="header__nav js-menu">
@@ -200,7 +200,7 @@
                     <!-- end social -->
                   </div>
                   <div class="header__btn-mob">
-                    <button class="btn btn--combine">
+                    <button class="btn btn--combine js-popup-open" data-popup-target="order">
                       <span class="btn__title">Записаться на приём</span>
                       <span class="btn__icon"></span>
                     </button>
@@ -208,7 +208,7 @@
                 </div>
               </div>
               <div class="header__btn">
-                <button class="btn btn--combine">
+                <button class="btn btn--combine js-popup-open" data-popup-target="order">
                   <span class="btn__title">Записаться на приём</span>
                   <span class="btn__icon"></span>
                 </button>
@@ -254,7 +254,7 @@
               <div class="col-xl-3">
                 <div class="footer__logo">
                   <a href="#" class="logo">
-                    <img class="js-lazy" alt="" width="250" height="85" data-src="./img/logo-white.svg" />
+                    <img src="" class="js-lazy" alt="" width="250" height="85" data-src="./img/logo-white.svg" />
                   </a>
                 </div>
                 <div class="footer__text">
@@ -366,6 +366,51 @@
       <!-- end footer -->
     </div>
     <!-- END content -->
+    <!-- begin popups -->
+    <!-- begin popup -->
+    <div class="popup js-popup" data-popup="order">
+      <div class="popup__inner">
+        <button class="popup__close js-popup-close"></button>
+        <div class="popup__form">
+          <!-- begin form -->
+          <div class="form">
+            <form>
+              <div class="form__title">
+                <div class="title title--bold title--sm title--ttn">Записаться на прием</div>
+              </div>
+              <div class="form__subttl">Оставьте ваши данные ниже и наш менеджер свяжется с вами в ближайшее время</div>
+              <div class="form__field">
+                <!-- begin input -->
+                <div class="input">
+                  <input type="text" placeholder="Имя">
+                </div>
+                <!-- end input -->
+              </div>
+              <div class="form__field">
+                <!-- begin input -->
+                <div class="input">
+                  <input type="tel" placeholder="+38 ( _ _ _ ) _ _ _ - _ _ - _ _">
+                </div>
+                <!-- end input -->
+              </div>
+              <div class="form__field">
+                <!-- begin input -->
+                <div class="input">
+                  <input type="text" placeholder="На какую услугу хотите записаться?">
+                </div>
+                <!-- end input -->
+              </div>
+              <div class="form__field">
+                <button class="btn">Записаться на приём</button>
+              </div>
+            </form>
+          </div>
+          <!-- end form -->
+        </div>
+      </div>
+    </div>
+    <!-- end popup -->
+    <!-- end popups -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->

@@ -1,0 +1,38 @@
+.popup
+  position: fixed
+  z-index: 20
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  background-color: rgba($black, .7)
+  padding: 15px
+  overflow: auto
+  +vertical
+  +ready
+    +tr(opacity .3s, visibility .3s)
+  visibility: hidden
+  opacity: 0
+  &.is-active
+    visibility: visible
+    opacity: 1
+  &__inner
+    position: relative
+    width: 100%
+    display: inline-block
+    vertical-align: middle
+    font-size: 16px
+    max-width: 450px
+    +sm
+      font-size: 14px
+  &__close
+    +icon-close(20, 1, currentColor)
+    position: absolute
+    top: 20px
+    right: 20px
+  &__form
+    .form
+      +sm
+        padding-top: 40px
+
+

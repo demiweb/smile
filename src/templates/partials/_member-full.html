@@ -1,0 +1,37 @@
+<!-- begin member-full -->
+<div class="member-full{% if i.mod %} {{ i.mod }}{% endif %} js-team-descr{% if i.active %} is-active{% endif %}" data-member="{{ i.dataMember }}">
+  <div class="member-full__left">
+    <div class="member-full__img js-lazy" data-background-image="./img/team/{% if i.img %}{{ i.img }}{% else %}lg-01.jpg{% endif %}"></div>
+  </div>
+
+  <div class="member-full__right">
+    <div class="member-full__content">
+      <div class="member-full__title">
+        <div class="title title--bold title--ttn">{{ i.title | safe }}</div>
+      </div>
+
+      <div class="member-full__subttl">
+        <div class="title title--bold title--h5 title--black">{{ i.subttl | safe }}</div>
+      </div>
+
+      <div class="member-full__meta">
+        {{ mixins.list(
+          name = 'meta-list',
+          descr = true,
+          modifications = { wrap: '', item: '', link: '' },
+          list = i.meta
+        ) }}
+      </div>
+
+      <div class="member-full__btn">
+        {{ mixins.btn(
+          title = 'Записаться на приём',
+          mod = 'js-popup-open',
+          href = false,
+          attributes = { 'data-popup-target': 'order' }
+        ) }}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end member-full -->

@@ -9,4 +9,5 @@ PageList:
 - file: blog-page.html
 - file: 404.html
 - file: thanks.html
+- file: service-one.html
 

@@ -14,6 +14,7 @@ import toggleTeam from './components/toggleTeam';
 import toggleMobDropdown from './components/toggleMobDropdown';
 import setTextareaHeight from './components/setTextareaHeight';
 import setAccordion from './components/setAccordion';
+import setPopups from './components/setPopups';
 
 document.addEventListener('DOMContentLoaded', () => {
   sayHello();
@@ -26,4 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleMobDropdown();
   setTextareaHeight();
   setAccordion();
+  setPopups();
 });

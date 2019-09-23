@@ -1,0 +1,45 @@
+{%set
+form = {
+  title: 'Записаться на прием',
+  subttl: 'Оставьте ваши данные ниже и наш менеджер
+свяжется с вами в ближайшее время',
+  fields: [
+    {
+      name: 'input',
+      mod: '',
+      type: 'text',
+      fieldClass: '',
+      placeholder: 'Имя',
+      fieldAttributes: {}
+    },
+    {
+      name: 'input',
+      mod: '',
+      type: 'tel',
+      fieldClass: '',
+      placeholder: '+38 ( _ _ _ ) _ _ _ - _ _ - _ _',
+      fieldAttributes: {}
+    },
+    {
+      name: 'input',
+      mod: '',
+      type: 'text',
+      fieldClass: '',
+      placeholder: 'На какую услугу хотите записаться?',
+      fieldAttributes: {}
+    }
+  ]
+}
+%}
+
+<!-- begin popup -->
+<div class="popup js-popup" data-popup="order">
+  <div class="popup__inner">
+    <button class="popup__close js-popup-close"></button>
+
+    <div class="popup__form">
+      {% include "partials/_form.html" %}
+    </div>
+  </div>
+</div>
+<!-- end popup -->

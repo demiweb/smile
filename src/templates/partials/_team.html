@@ -1,6 +1,7 @@
 {%set
 members = [
   {
+    mod: 'member-full--inner',
     dataMember: 'member-01',
     active: true,
     title: 'Мэри Варданян',
@@ -22,6 +23,7 @@ members = [
     ]
   },
   {
+    mod: 'member-full--inner',
     dataMember: 'member-02',
     title: 'Максим Дорошенко',
     subttl: 'Стоматолог- терапевт, эндодонт',
@@ -41,6 +43,7 @@ members = [
     ]
   },
   {
+    mod: 'member-full--inner',
     dataMember: 'member-03',
     title: 'Яна Овчаренко',
     subttl: 'гигиенист, ассистент 
@@ -61,8 +64,8 @@ members = [
     ]
   },
   {
+    mod: 'member-full--inner',
     dataMember: 'member-04',
-    active: true,
     title: 'Мэри Варданян',
     subttl: 'стоматолог-ортодонт, 
     детский ортодонт',
@@ -82,6 +85,7 @@ members = [
     ]
   },
   {
+    mod: 'member-full--inner',
     dataMember: 'member-05',
     title: 'Максим Дорошенко',
     subttl: 'Стоматолог- терапевт, эндодонт',
@@ -101,6 +105,7 @@ members = [
     ]
   },
   {
+    mod: 'member-full--inner',
     dataMember: 'member-06',
     title: 'Яна Овчаренко',
     subttl: 'гигиенист, ассистент 
@@ -163,42 +168,7 @@ members = [
     <div class="col-lg-8">
       <div class="team__descr">
         {% for i in members %}
-        <!-- begin member-full -->
-        <div class="member-full js-team-descr{% if i.active %} is-active{% endif %}" data-member="{{ i.dataMember }}">
-          <div class="member-full__left">
-            <div class="member-full__img js-lazy" data-background-image="./img/team/lg-01.jpg"></div>
-          </div>
-
-          <div class="member-full__right">
-            <div class="member-full__content">
-              <div class="member-full__title">
-                <div class="title title--bold title--ttn">{{ i.title | safe }}</div>
-              </div>
-
-              <div class="member-full__subttl">
-                <div class="title title--bold title--h5 title--black">{{ i.subttl | safe }}</div>
-              </div>
-
-              <div class="member-full__meta">
-                {{ mixins.list(
-                  name = 'meta-list',
-                  descr = true,
-                  modifications = { wrap: '', item: '', link: '' },
-                  list = i.meta
-                ) }}
-              </div>
-
-              <div class="member-full__btn">
-                {{ mixins.btn(
-                  title = 'Записаться на приём',
-                  mod = '',
-                  href = false
-                ) }}
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end member-full -->
+        {% include "partials/_member-full.html" %}
         {% endfor %}
       </div>
     </div>

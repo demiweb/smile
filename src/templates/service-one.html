@@ -1,0 +1,28 @@
+---
+title: service-one
+page: service-one
+hero: {
+  mod: '',
+  bg: 'bg-hero-service-one.jpg',
+  title: 'Отбеливание зубов',
+  btns: [
+    {
+      title: 'Записаться на приём',
+      mod: 'js-popup-open',
+      attributes: { 'data-popup-target': 'order' }
+    }
+  ]
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-service-one.html" %}
+  {% include "partials/sections/_s-specialists.html" %}
+  {% include "partials/sections/_s-faq.html" %}
+  {% include "partials/sections/_s-call.html" %}
+  {% include "partials/sections/_s-video.html" %}
+  {% include "partials/sections/_s-offer.html" %}
+  {% include "partials/sections/_s-contacts.html" %}
+{% endblock %}

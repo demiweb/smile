@@ -48,8 +48,9 @@ contacts = [
           <div class="contacts-block__btn">
             {{ mixins.btn(
               title = 'Записаться на приём',
-              mod = 'btn--full',
-              href = false
+              mod = 'btn--full js-popup-open',
+              href = false,
+              attributes = { 'data-popup-target': 'order' }
             ) }}
           </div>
         </div>

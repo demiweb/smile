@@ -1,0 +1,16 @@
+<!-- begin accordion -->
+<div class="accordion{% if accordion.mod %} {{ accordion.mod}}{% endif %} js-accordion">
+  {% for i in accordion.items %}
+  <!-- begin accordion-item -->
+  <div class="accordion-item{% if accordion.itemMod %} {{ accordion.itemMod }}{% endif %}">
+    <button class="accordion-item__title js-accordion-title">
+      {{ i.title| safe }}
+      <span class="accordion-item__icon"></span>
+    </button>
+
+    <div class="accordion-item__content js-accordion-item">{{ i.content | safe }}</div>
+  </div>
+  <!-- end accordion-item -->
+  {% endfor %}
+</div>
+<!-- end accordion -->

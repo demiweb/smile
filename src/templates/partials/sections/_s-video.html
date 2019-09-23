@@ -1,0 +1,28 @@
+{%set
+section = {
+  mod: 'pb-0',
+  title: {
+    title: 'Смотрите наше видео'
+  },
+  subttl: {
+    text: 'Специально для вас мы сняли весь процесс отбеливания <br>
+  в нашей стоматологии на видео'
+  }
+}
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <!-- begin video -->
+      <div class="video">
+        <iframe class="js-lazy" src="" data-src="https://www.youtube.com/embed/MUOv8ksL9zk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- end video -->
+    </div>
+  </div>
+
+{% endblock %}

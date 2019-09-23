@@ -60,6 +60,7 @@ class MySlider {
     };
   }
 
+
   setOptions() {
     if (this.name === 'team') {
       if (window.matchMedia('(min-width: 992px)').matches) {
@@ -105,22 +106,6 @@ export default function setSliders() {
 
   function getOptions({ nextButton, prevButton, container }) {
     return {
-      // team: {
-      //   container,
-      //   prevButton,
-      //   nextButton,
-      //   mouseDrag: true,
-      //   axis: 'horizontal',
-      //   nav: false,
-      //   items: 3,
-      //   onInit: setLazy,
-      //   // responsive: {
-      //   //   992: {
-      //   //     axis: 'vertical',
-      //   //     preventScrollOnTouch: 'force',
-      //   //   },
-      //   // },
-      // },
       items: {
         container,
         prevButton,
@@ -138,6 +123,15 @@ export default function setSliders() {
             items: 3,
           },
         },
+      },
+      small: {
+        container,
+        prevButton,
+        nextButton,
+        mouseDrag: true,
+        nav: false,
+        items: 1,
+        onInit: setLazy,
       },
     };
   }

@@ -19,10 +19,6 @@
     .member-full
       position: relative
       flex: 0 0 100%
-      // bottom: 50px
-      // top: 25px
-      // left: 0
-      // right: 0
       z-index: 1
       visibility: hidden
       opacity: 0
@@ -65,11 +61,10 @@
   &__subttl
     display: block
 
-
-
-.member-full
-  
+.member-full  
   padding: 60px
+  box-shadow: 0px 0px 18px 0px rgba(19, 30, 133, 0.09)
+  border-radius: $radius
   +flex
   +xl
     padding: 50px
@@ -81,16 +76,18 @@
     padding: 20px
     display: block
   &__left
-    width: percentage(360/810)
+    // width: percentage(360/810)
+    width: 365px
     +sm
       width: auto
   &__right
-    width: percentage(450/810)
+    // width: percentage(450/810)
+    width: calc(100% - 365px)
     +sm
       width: auto
   &__img
     +cover
-    // padding-top: 140%
+    padding-top: 120%
     height: 100%
     +lg
       padding-top: 120%
@@ -123,5 +120,15 @@
     +lg
       margin-bottom: 30px
     +md
+      margin-bottom: 15px
+
+  &--inner
+    border-radius: 0
+    box-shadow: none
+
+.specialists
+  &__item
+    margin-bottom: 30px
+    +sm
       margin-bottom: 15px
   

@@ -67,9 +67,10 @@ contacts = [
             <div class="contacts-block__btn">
             {{ mixins.btn(
               title = 'Записаться на приём',
-              mod = 'btn--combine',
+              mod = 'btn--combine js-popup-open',
               combine = true,
-              href = false
+              href = false,
+              attributes = { 'data-popup-target': 'order' }
             ) }}
           </div>
           </div>
