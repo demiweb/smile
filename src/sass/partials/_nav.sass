@@ -5,11 +5,13 @@
     +lg
       display: block
   li
+    position: relative
     +lg
       padding: 10px
       // height: 41px
-      border-bottom: 1px solid $c-text
-    &.has-dropdown
+      // border-bottom: 1px solid $c-text
+    &.has-dropdown,
+    &.menu-item-has-children
       position: relative
       > a
         +after
@@ -23,22 +25,7 @@
       +lg
         padding-right: 50px
         +after
-          +icon-arrow(7, 7, 1, currentColor, -45)
-          display: inline-block
-          position: absolute
-          top: 15px
-          right: 17px
-          z-index: 2
-          pointer-events: none
-        +before
-          height: 42px
-          width: 40px
-          background-color: $accent-2
-          position: absolute
-          top: 0
-          right: 0
-          z-index: 1
-          pointer-events: none
+          display: none
       +sm
         +before
           height: 39px
@@ -80,23 +67,18 @@
     color: inherit
     visibility: visible
     opacity: 1
-    padding-top: 0
-    max-height: 0
-    overflow: hidden
-  &.is-active
-    visibility: visible
-    opacity: 1
-    +lg
-      // overflow: visible
-      margin-top: 10px
+    margin-top: 10px
+    font-size: .75em
+
+      
   li
     display: block
     +lg
       border-bottom: 0
-      padding: 0
+      // padding: 0
 
     +notlast
-      border-bottom: 1px solid  #e4a5e4
+      // border-bottom: 1px solid  #e4a5e4
     &:first-child
       a
         border-top-left-radius: $radius-sm
@@ -138,6 +120,12 @@
       +lg
         color: $accent-1
         background-color: transparent
+    +lg
+      display: inline
+      padding: 0
+      +hover
+        background-color: transparent
+        color: $accent-1
 
 .nav--footer
   color: $white
@@ -155,3 +143,14 @@
   a
     +hover
       color: $c-text
+
+.sub-menu
+  @extend .nav
+  @extend .nav--dropdown
+  display: block !important
+  padding-top: 0
+  background-color: $accent-1
+  border-radius: $radius-sm
+  +lg
+    background-color: $white
+    border-radius: 0

@@ -11,7 +11,7 @@ import setSliders from './components/setSliders';
 import setScrollBar from './components/setScrollBar';
 import toggleMenu from './components/toggleMenu';
 import toggleTeam from './components/toggleTeam';
-import toggleMobDropdown from './components/toggleMobDropdown';
+// import toggleMobDropdown from './components/toggleMobDropdown';
 import setTextareaHeight from './components/setTextareaHeight';
 import setAccordion from './components/setAccordion';
 import setPopups from './components/setPopups';
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setScrollBar();
   toggleMenu();
   toggleTeam();
-  toggleMobDropdown();
+  // toggleMobDropdown();
   setTextareaHeight();
   setAccordion();
   setPopups();
