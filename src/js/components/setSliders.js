@@ -1,6 +1,7 @@
 import { tns } from 'tiny-slider/src/tiny-slider';
 import { debounce } from 'throttle-debounce';
 import setLazy from './setLazy';
+import { isTouch } from '../helpers';
 
 class MySlider {
   constructor(slider, getOptions) {
@@ -83,7 +84,8 @@ class MySlider {
 
   _reinitTeamSlider() {
     this.onResize = debounce(300, this.resize.bind(this));
-    window.addEventListener('resize', this.onResize);
+    const event = isTouch ? 'orientationchange' : 'resize';
+    window.addEventListener(event, this.onResize);
   }
 
   init() {
