@@ -1,0 +1,23 @@
+---
+title: our-works
+page: our-works
+hero: {
+  mod: '',
+  bg: 'bg-hero-works.jpg',
+  title: 'Наши работы',
+  btns: [
+    {
+      title: 'Записаться на приём',
+      mod: 'js-popup-open',
+      attributes: { 'data-popup-target': 'order' }
+    }
+  ]
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-works-list.html" %}
+  {% include "partials/sections/_s-contacts.html" %}
+{% endblock %}

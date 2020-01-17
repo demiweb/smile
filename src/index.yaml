@@ -10,4 +10,6 @@ PageList:
 - file: 404.html
 - file: thanks.html
 - file: service-one.html
+- file: before-after.html
+- file: our-works.html
 

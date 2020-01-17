@@ -1,0 +1,23 @@
+---
+title: before-after
+page: before-after
+hero: {
+  mod: '',
+  bg: 'bg-hero-works.jpg',
+  title: 'Примеры работ (Отбеливание зубов)',
+  btns: [
+    {
+      title: 'Записаться на приём',
+      mod: 'js-popup-open',
+      attributes: { 'data-popup-target': 'order' }
+    }
+  ]
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-works.html" %}
+  {% include "partials/sections/_s-contacts.html" %}
+{% endblock %}

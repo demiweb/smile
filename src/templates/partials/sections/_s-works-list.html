@@ -1,0 +1,89 @@
+{%set
+section = {
+  mod: '',
+  title: {    
+    title: 'виды работ'
+  },
+  subttl: {
+    text: 'Ценовая политика нашей стоматологической клиники, в отличие от большинства других киевских учреждений, <br>
+позволяет даже людям со средним достатком качественно лечить зубы и заботиться о своём здоровье.'
+  }
+}
+%}
+
+{%set
+blocks = [
+  {
+    title: 'УСЛУГИ ДЛЯ ВЗРОСЛЫХ',
+    works: [
+      { img: '554', title: 'Взрослая ортодонтия' },
+      { img: '555', title: 'Отбеливание зубов' },
+      { img: '556', title: 'Микроимпланты' },
+      { img: '557', title: 'Профессиональная чистка 
+зубов' },
+      { img: '558', title: 'Временные коронки' },
+      { img: '559', title: 'Постоянные коронки' },
+      { img: '562', title: 'Художественная 
+реставрация зубов' },
+      { img: '560', title: 'Элайнеры' },
+      { img: '563', title: 'Лечение зубов 
+под микроскопом' }
+    ]
+  },
+  {
+    title: 'УСЛУГИ ДЛЯ ДЕТЕЙ',
+    works: [
+      { img: '564', title: 'Детская ортодонтия' },
+      { img: '565', title: 'Детские зубные протезы' },
+      { img: '566', title: 'Лечение детских зубов' },
+      { img: '567', title: 'Лечение молочных зубов' },
+      { img: '568', title: 'Пластины на зубы детям' },
+      { img: '569', title: 'Пломбирование детских 
+зубов' },
+      { img: '570', title: 'Удаление молочных зубов' }
+    ]
+  },
+  {
+    title: 'УСТАНОВКА БРЕКЕТОВ',
+    works: [
+      { img: '571', title: 'Металлические брекеты' },
+      { img: '572', title: 'Керамические брекеты' },
+      { img: '573', title: 'Комбинированные брекеты' },
+      { img: '574', title: 'Диагностика перед установкой брекет системы' }
+    ]
+  }
+]
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+  {% for i in blocks %}
+  <!-- begin works-block -->
+  <div class="works-block">
+    <h5 class="works-block__title title title--h5">{{ i.title | safe }}</h5>
+
+    <div class="row">
+      {% for j in i.works %}
+      <div class="col-xl-3 col-lg-4 col-sm-6">
+        <!-- begin work-card -->
+        <div class="work-card">
+          <div class="work-card__img js-lazy" data-background-image="./img/works/{{ j.img }}.jpg"></div>
+
+          <div class="work-card__content">
+            <h3 class="work-card__title title title--h3 title--ttn">{{ j.title | safe }}</h3>
+
+            {{ mixins.btn(
+              title = 'Посмотреть работы',
+              mod = 'btn--full'
+            ) }}
+          </div>
+        </div>
+        <!-- end work-card -->
+      </div> 
+      {% endfor %}
+    </div>
+  </div>
+  <!-- end works-block -->
+  {% endfor %}
+{% endblock %}

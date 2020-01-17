@@ -1,0 +1,67 @@
+.work-example
+  margin-bottom: 20px
+  &__top
+    margin-bottom: 5px
+  &__body
+    +flex
+    +md
+      display: block
+  &__img
+    +cover
+    padding-top: 50%
+    margin-right: 15px
+    width: calc(50% - 15px)
+    +lg
+      width: calc(50% - 7px)
+    +md
+      width: 100%
+      margin-right: 0
+      margin-bottom: 15px
+  &__content
+    width: 50%
+    padding-left: 15px
+    +lg
+      padding-left: 7px
+    +md
+      padding-left: 0
+      width: 100%
+  &__title
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+
+
+.works-block
+  &__title
+    color: $accent-2
+    margin-bottom: 20px
+    +md
+      margin-bottom: 10px
+
+.work-card
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.08)
+  border-radius: 18px
+  background-color: $white
+  overflow: hidden
+  text-align: center
+  height: calc(100% - 30px)
+  margin-bottom: 30px
+  +flex(flex-start, normal, column)
+  &__img
+    +cover
+    padding-top: 50%
+  &__content
+    padding: 30px
+    flex-grow: 1
+    +flex(flex-start, normal, column)
+    +lg
+      padding: 20px
+    +md
+      padding: 15px
+  &__title
+    margin-bottom: 35px
+    flex-grow: 1
+    +lg
+      margin-bottom: 25px
+    +md
+      margin-bottom: 15px
